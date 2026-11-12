@@ -333,7 +333,7 @@
         font-family: 'TheWildBreathOfZelda', sans-serif;
         font-style: normal;
         background-position: center;
-        color: rgb(178, 151, 0);
+        color: rgb(240, 209, 34);
         background-image: url(https://cdn.mos.cms.futurecdn.net/dZedhVQTwDCPpLDTDppLgR.jpg);
         background-repeat: no-repeat;
         background-position: center center;
@@ -343,10 +343,11 @@
         margin-bottom: -50px;
         margin-top: -25px;
         filter: drop-shadow(0px 0px 2px black);
-        --header-color: rgb(208, 189, 77);
+        --header-color: rgb(240, 214, 65);
         --window-bg: rgba(0,0,0,0.1);
-        --border-color: rgb(110, 38, 0);
+        --border-color: rgb(240, 214, 65);
         --button-bg-color: rgba(0,0,0,0);
+        --button-select-gradient: radial-gradient(gold, yellow)
         }
 
         .silksong{
@@ -636,7 +637,6 @@
         .infinite-void{
         font-family: "Noto Serif Display", serif;
         font-optical-sizing: auto;
-        font-weight: <weight>;
         font-style: normal;
         font-variation-settings:
           "wdth" 100;
@@ -667,7 +667,6 @@
         .malevolent-shrine{
         font-family: "Noto Serif Display", serif;
         font-optical-sizing: auto;
-        font-weight: <weight>;
         font-style: normal;
         font-variation-settings:
           "wdth" 100;
@@ -1690,7 +1689,7 @@
           <h2 class="header">Recently Played</h2>
           <div id="recents"></div>
           <h3 class="header" style="margin: 2px">Featured Theme</h3>
-          <button class='dyinglight' onclick='changeTheme("ocarinaoftime")'>Ocarina Of Time</button>
+          <button class='ocarinaoftime' onclick='changeTheme("ocarinaoftime")'>Ocarina Of Time</button>
           <h2 class="header">Recommended Games &amp; Apps</h2>
           <div id="featuredgames"></div>
           <h3 class="header">Open link (unreliable)</h3>
@@ -1769,11 +1768,11 @@
       </div>
 
       <changelog id="changelog" style="display: none" onclick="closeChangelog()">
-        <h3>Cheddar Launcher V2.0.3 - Save Data & Cloaking</h3>
+        <h3>Cheddar Launcher V2.0.4 - Automatic Updates</h3>
         <p></p>
-        -Added the ability to save and load game data
-        <div>-Made the site switch to an image of a new tab when the tab is changed (click to close))</div>
-        -<button class='dyinglight' onclick="changeTheme('dyinglight')">Dying Light</button> (theme)
+        -From now on, you will not have to manually downloadd updates-
+        <div>-Removed saving data, as it was extremely buggy-</div>
+        -<button class='ocarinaoftime' onclick="changeTheme('ocarinaoftime')">Ocarina of Time</button> (theme)-
         <div style="color: transparent">a</div>
         Click to close menu
         <p></p>
@@ -2038,10 +2037,13 @@
         <div><button onclick="saveCloak()">Save</button></div>
       </div>
       <h3>Game Saves</h3>
+
+      <!--
       <button onclick="saveData()">Save Game Data</button>
       <button onclick="document.getElementById('importFile').click()">Load Game Data</button>
       <input type="file" id="importFile" style="display: none" onchange="loadGameData(event)" />
       <div style="color: Transparent">A</div>
+      -->
       <div>
         Wallpaper:
         <input id="wallpaperInput" />
@@ -2256,9 +2258,9 @@
       cloakName.value = localStorage.cheddarCName;
       document.getElementById("wallpaperInput").value = localStorage.cheddarBG;
 
-      if (!localStorage.Changelog203) {
+      if (!localStorage.Changelog204) {
         document.getElementById("changelog").style.display = "block";
-        localStorage.Changelog203 = "seen";
+        localStorage.Changelog204 = "seen";
       }
 
       if (!localStorage.CheddarRecents) {
