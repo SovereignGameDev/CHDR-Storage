@@ -1,1 +1,3681 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>New Tab</title>
+    <link rel="icon" href="https://uploads.onecompiler.io/435gma6sn/43tdpw9dg/tabico.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Betania+Patmos+GDL&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&amp;family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&amp;family=Sedgwick+Ave+Display&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&amp;display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/ocr-a-std" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/trajan-pro" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+                
+    <!--USE https://githack.com TO USE GITHUB URLS-->
+    <style id="stylesheet">
+        @property --header-color {
+          syntax: "<color>";
+          inherits: true;
+          initial-value: #fab800;
+        }
 
+        @font-face {
+          font-family: 'TheWildBreathOfZelda';
+          /* Replace with the actual path to your downloaded font file */
+          src: url('https://rawcdn.githack.com/SovereignGameDev/CHDR-Storage/refs/heads/main/The%20Wild%20Breath%20of%20Zelda.otf') format('opentype'),
+            url('https://rawcdn.githack.com/SovereignGameDev/CHDR-Storage/refs/heads/main/The%20Wild%20Breath%20of%20Zelda.otf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+          
+        @property --button-color {
+          syntax: "<color>";
+          inherits: true;
+          initial-value: var(--header-color);
+        }
+
+        @property --border-color {
+          syntax: "<color>";
+          inherits: true;
+          initial-value: #fab800;
+        }
+
+        @property --border-select-color {
+          syntax: "<color>";
+          inherits: true;
+          initial-value: currentcolor;
+        }
+
+        @property --button-gradient {
+          syntax: "*";
+          inherits: true;
+          initial-value: linear-gradient(Transparent, Transparent, #20223b);
+        }
+
+        @property --button-bg-filter{
+          syntax: "*";
+          inherits: true;
+          initial-value: linear-gradient(Transparent, Transparent, #20223b);
+        }
+
+        @property --border-shape {
+          syntax: "*";
+          inherits: true;
+          initial-value: outset;
+        }
+          
+        @property --header-bold {
+          syntax: "*";
+          inherits: true;
+          initial-value: 400;
+        }
+
+        @property --border-select-shape {
+          syntax: "*";
+          inherits: true;
+          initial-value: inset;
+        }
+
+        @property --button-select-gradient {
+          syntax: "*";
+          inherits: true;
+          initial-value: linear-gradient(Transparent , Transparent,Transparent ,Transparent ,Transparent, #875f00);
+        }
+
+        @property --button-select-color {
+          syntax: "<color>";
+          inherits: true;
+          initial-value: #875f00;
+        }
+
+        @property --button-select-bg-color {
+          syntax: "<color>";
+          inherits: true;
+          initial-value: #fcc11e;
+        }
+
+        @property --button-bg-color {
+          syntax: "color";
+          inherits: true
+          initial-value: none;
+        }
+
+        @property --border-radius {
+          syntax: "*";
+          inherits: true;
+          initial-value: 10px;
+        }
+
+        @property --image-visibility {
+          syntax: '*';
+          inherits: true;
+          initial-value: inline;
+        }
+
+        @property --button-transition {
+          sintax: "*";
+          inherits: true;
+          initial-value: none;
+        }
+
+        @property --window-filter {
+          syntax: '*';
+          inherits: true;
+          initial-value: blur(4px);
+        }
+
+        @property --window-radius {
+          syntax: '*';
+          inherits: true;
+          initial-value: 10px;
+        }
+
+        @property --window-bg {
+          syntax: '*';
+          inherits: true;
+          initial-value: rgba(32, 34, 59, 0.25);
+        }
+
+        @property --window-bc {
+          syntax: 'color';
+          inherits: true;
+          initial-value: var(--border-color);
+        }
+
+        @property --tw-bg-size {
+          syntax: 'color';
+          inherits: true;
+          initial-value: 100% 100%;
+        }
+
+        @property --particle-length {
+          sintax: '<length-percentage>';
+          inherits: true;
+          initial-value: 2px;
+        }
+
+        @property --particle-height {
+          sintax: '<length-percentage>';
+          inherits: true;
+          initial-value: 2px;
+        }
+
+        body{
+          transition: background-color 0.5s linear 0s, color 0.5s linear 0s, background-image 0.5s linear 0s, transform 0.5s ease-in-out 0s;
+        }
+
+        .darkmode{
+        background-color: black;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        color: #85d6aa;
+        filter: drop-shadow(0px 0px 10px black);
+        background-repeat: no-repeat;
+        background-image: linear-gradient(black, #406350, black);
+        --header-color: #85d6aa;
+        --border-color: white;
+        --button-select-bg-color: #85d6aa;
+        --button-select-gradient: linear-gradient(Transparent , Transparent,Transparent ,Transparent ,Transparent, #406350);
+        --button-select-color: #406350;
+        }
+
+        .default{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: linear-gradient(#20223b, #406350, #20223b);
+        color: #fab800;
+        filter: drop-shadow(0px 0px 1px black);
+        min-height: 100%;
+        }
+
+        .stringcheese{
+        background-color: white;
+        background-image: linear-gradient(#E1D9D1, #808080, #000000);
+        font-family: "Orbitron", system-ui;
+        font-weight: 400;
+        font-style: Italic;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: #FFFFFF;
+        filter: drop-shadow(3px 4px 3px grey);
+        min-height: 15%;
+        --border-color: #FFFFFF;
+        }
+
+        .old-v3{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: linear-gradient(#20223b, #406350, #20223b);
+        color: #fab800;
+        filter: drop-shadow(0px 0px 1px black);
+        min-height: 100%;
+        --border-radius: 0px;
+        --border-color: rgba(255, 255, 255, 0.5);
+        --border-select-color: #42b6f5;
+        --border-shape: solid;
+        --border-select-shape: solid;
+        }
+
+        .thiswillbe{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#17192b, #659c7e, #17192b);
+        color: #fab800;
+        --button-bg-color: rgba(250, 184, 0, 0.1);
+        --button-bg-filter: blur(2px)
+        --vignette: none;
+        --star: block;
+        filter: drop-shadow(0px 0px 10px #fab800) drop-shadow(0px 15px 2px #1c1c1c);
+        }
+
+        .hollowknight{
+        background-color: black;
+        font-family: 'Trajan Pro', sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        background-position: center;
+        color: grey;
+        background-image: url(https://sfgrena.de/screenshots/Forgotten%20Crossroads.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -50px;
+        margin-top: -25px;
+        backdrop-filter: blur(5px);
+        --header-color: white;
+        --border-color: white;
+        --button-select-bg-color: white;
+        --button-select-gradient: linear-gradient(Transparent , Transparent,Transparent ,Transparent ,Transparent, grey);
+        --button-select-color: grey;
+        --vignette: block;
+        }
+        
+        .dyinglight{
+        background-color: black;
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        background-position: center;
+        color: white;
+        background-image: url(https://3.bp.blogspot.com/-55qufAPyVKY/Ubgow9utBkI/AAAAAAAAPWo/In0DzyBQChc/s1600/DyingLight_E3_final+%25282%2529.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -50px;
+        margin-top: -25px;
+        backdrop-filter: blur(2px);
+        --header-color: white;
+        --border-color: white;
+        --button-select-bg-color: orange;
+        --button-select-gradient: none;
+        --button-select-color: black;
+        --vignette: block;
+        --window-bg: rgba(0,0,0,0.75);
+        --window-radius: 0px; 
+        --window-bc: Transparent;
+        --header-color: orange;
+        --button-gradient: none;
+        --button-bg-color: rgba(0,0,0,0.5);
+        --border-radius: 0px;
+        --border-color: Transparent;
+        --header-bold: bold;
+        --button-color: white;
+        scrollbar-color: orange orange;
+        }
+
+        .ocarinaoftime{
+        background-color: skyblue;
+        font-family: 'TheWildBreathOfZelda', sans-serif;
+        font-style: normal;
+        background-position: center;
+        color: rgb(178, 151, 0);
+        background-image: url(https://cdn.mos.cms.futurecdn.net/dZedhVQTwDCPpLDTDppLgR.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -50px;
+        margin-top: -25px;
+        filter: drop-shadow(0px 0px 2px black);
+        --header-color: rgb(208, 189, 77);
+        --window-bg: rgba(0,0,0,0.1);
+        --border-color: rgb(110, 38, 0);
+        --button-bg-color: rgba(0,0,0,0);
+        }
+
+        .silksong{
+        background-color: black;
+        font-family: 'Trajan Pro', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #ffadb3;
+        background-image: url(https://cdn.mos.cms.futurecdn.net/xLThEkGypaz3Syo6iQvGjf.jpg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -50px;
+        margin-top: -25px;
+        backdrop-filter: blur(5px);
+        --header-color: #ffe0e2;
+        --border-color: white;
+        --button-select-bg-color: #ffadb3;
+        --button-select-gradient: linear-gradient(Transparent , Transparent,Transparent ,Transparent ,Transparent, #997a7d);
+        --button-select-color: white;
+        --vignette: block;
+        }
+
+        .script{
+        background-color: black;
+        font-family: "OCR A Std", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: #d66f00;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXDMALgYJqaq5wXsMkrJBWI8hbELA-LElN_g&s);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -50px;
+        margin-top: -25px;
+        backdrop-filter: blur(5px) brightness(0.5);
+        --header-color: #59b3f0;
+        --border-color: #59b3f0;
+        --button-select-bg-color: Transparent;
+        --button-select-gradient: linear-gradient(Transparent , Transparent,Transparent ,Transparent ,Transparent, #66f250);
+        --button-select-color: #66f250;
+        filter: drop-shadow(0px 0px 4px #32607f);
+        }
+
+        .mirror{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#20223b, #406350, #20223b);
+        color: #fab800;
+        transform: rotate(180deg);
+        }
+
+        .classic{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        color: #d69702;
+        --header-color: #fcc11e;
+        --button-gradient: Transparent;
+        --button-select-bg-color: none;
+        --button-select-gradient: none;
+        --button-select-bg-color: Transparent;
+        --button-select-color: #fcc11e;
+        --border-radius: 0px;
+        --image-visibility: none;
+        --window-radius: 0px;
+        }
+
+        .helixnebula{
+        background-color: white;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        color: #b49c94;
+        background-image: url(https://cdn.esahubble.org/archives/images/wallpaper5/opo0432b.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        filter: drop-shadow(0px 0px 20px red);
+        --header-color: #d1606e;
+        --border-color: purple;
+        --button-select-bg-color: rgba(163, 113, 140, 0.25);
+        --button-select-gradient: radial-gradient(circle, Transparent, Transparent, Transparent, rgba(163, 113, 140));
+        --button-select-color: #b49c94;
+        --button-gradient: radial-gradient(circle, Transparent, Transparent, Transparent, rgba(163, 113, 140));
+        --button-bg-color: rgba(163, 113, 140, 0.5);
+        --button-transition: background-color 0.1s ease-in-out 0s;
+        --star: block;
+        }
+
+        .space{
+        background-color: black;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        color: #d16aff;
+        background-color: black;
+        filter: drop-shadow(0px 0px 20px #ebd6ff);
+        --header-color: #9614D0;
+        --border-color: purple;
+        --button-select-bg-color: rgba(163, 113, 140, 0.25);
+        --button-select-gradient: radial-gradient(circle, Transparent, Transparent, Transparent, rgba(163, 113, 140));
+        --button-select-color: #d16aff;
+        --button-gradient: radial-gradient(circle, Transparent, Transparent, Transparent, rgba(163, 113, 140));
+        --button-bg-color: rgba(163, 113, 140, 0.5);
+        --button-transition: background-color 0.1s ease-in-out 0s;
+        --star: block;
+        }
+
+        .winter{
+        background-color: lightgray;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        color: lightgray;
+        --header-color: white;
+        --border-color: lightgray;
+        --button-select-color: white;
+        --button-select-bg-color: rgba(204, 223, 252, 0.25);
+        --button-select-gradient: linear-gradient(Transparent , Transparent,Transparent ,Transparent ,Transparent, #20223b);
+        filter: drop-shadow(0px 0px 2px black);
+        --snow: block;
+        }
+
+        .og{
+        background-color: #242322;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        color: #7f6100;
+        --button-gradient: Transparent;
+        --header-color: #bc920a
+        --button-select-bg-color: #aa6d58;
+        --button-select-gradient: none;
+        --button-select-color: #7f6100;
+        --button-select-bg-color: none;
+        --image-visibility: none;
+        }
+
+        .old{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-image: radial-gradient(circle, #444343, #1c1c1c);
+        color: #bf9000;
+        filter: drop-shadow(0px 15px 2px #1c1c1c);
+        text-shadow: 0px 2px 5px black;
+        --header-color: #f1c232;
+        }
+
+        .cheddarglass{
+        background-color: white;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-image: linear-gradient(#20223b, #406350, #20223b);
+        background-repeat: no-repeat;
+        color: #bf9000;
+        filter: drop-shadow(0px 15px 2px #1c1c1c);
+        text-shadow: 0px 2px 5px black;
+        --button-gradient: radial-gradient(circle, Transparent, Transparent, Transparent, #8cdeb1);
+        --button-select-gradient: radial-gradient(circle, Transparent, Transparent, #8cdeb1);
+        --button-select-bg-color: Transparent;
+        --border-radius: 30px;
+        --button-select-color: orange;
+        --button-bg-color: yellow 0.5;
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: background-color 0.25s ease-in-out 0s;
+        }
+
+        .glass{
+        background-color: white;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#4d528f, rgba(133, 204, 165, 0.25), #4d528f);
+        color: white;
+        filter: drop-shadow(0px 15px 2px #1c1c1c);
+        text-shadow: 0px 2px 5px black;
+        border: ridge 5px white;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: radial-gradient(circle, Transparent, Transparent, rgba(255, 255, 255, 1));
+        --button-select-gradient: radial-gradient(circle, Transparent, Transparent, rgba(255, 255, 255, 0.5));
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: white 0.5;
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: background-color 0.25s ease-in-out 0s;
+        }
+
+        .frutiger-aero{
+        font-family: Verdana;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://frutigeraeroarchive.org/images/introduction/asadal.jpg");
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: Transparent;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(20px)
+        }
+
+        .synthwave{
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://unison.audio/wp-content/uploads/Synthwave-1.png.webp");
+        background-size: cover;
+        color: #f6c5fc;
+        text-shadow: 0px 2px 5px black;
+        --header-color: #de82ea;
+        --border-color: Transparent;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/283f2ae1-9d58-42ff-9ae9-08cab5fc6458/davw9qj-9b069b97-e9e6-4432-8809-02edd35a68a8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8yODNmMmFlMS05ZDU4LTQyZmYtOWFlOS0wOGNhYjVmYzY0NTgvZGF2dzlxai05YjA2OWI5Ny1lOWU2LTQ0MzItODgwOS0wMmVkZDM1YTY4YTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2iLV44VxEBThWyLYDRwRrHvTkNMJ65ba-WX4EW3KruU");
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .helldivers{
+        font-family: "Fjalla One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://m.media-amazon.com/images/M/MV5BN2IyY2VjMDctNGMzYS00ZWEwLTkyNTgtNTdkNDQ3MzA0MDhmXkEyXkFqcGc@._V1_.jpg");
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(5px);
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .infinite-void{
+        font-family: "Noto Serif Display", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://ih1.redbubble.net/image.1871724613.4818/flat,750x1000,075,t.jpg");
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        animation: jitter 0.001s linear infinite;
+        }
+
+        .malevolent-shrine{
+        font-family: "Noto Serif Display", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://public-files.gumroad.com/inoty01f1swxa1spn0ekjsnkpsas");
+        background-size: cover;
+        color: #e67c7c;
+        text-shadow: 0px 2px 5px black;
+        --header-color: #e86868;
+        --border-color: #7a1010;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        animation: jitter 0.001s linear infinite;
+        }
+
+        .deadly-sentencing{
+        font-family: "Special Elite", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://www.voicesinthevoid.com/wp-content/uploads/2026/03/Yuji-Itadori-inside-Higurumas-Deadly-Sentencing-Domain-in-JJK-E56.jpg");
+        background-size: cover;
+        color: #fcc24c;
+        text-shadow: 0px 2px 5px black;
+        --header-color: #ffd37a;
+        --border-color: #fcc24c;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: #ffd37a;
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .first-we-mine-then-we-craft{
+        font-family: 'Minecraft', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("https://uploads.onecompiler.io/435gma6sn/43tdpw9dg/2025-05-04_03.27.10.png");
+        color: gray;
+        text-shadow: 0px 2px 1px black;
+        --header-color: lightgray;
+        --border-color: black;
+        --button-gradient: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt1RvI6ScMJuD9sDxDr9IdiSrqp8SiqSBT0A&s");
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --button-bg-size: 120% 120%;
+        --button-bg-pos: center;
+        --border-radius: 0px;
+        --button-filter: blur(2px);
+        --button-select-bg-color: Transparent;
+        --button-transition: none;
+        --window-filter: blur(4px);
+        --window-bg: url("https://uploads.onecompiler.io/435gma6sn/43tdpw9dg/End_Poem_background.webp");
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .black-ops-1{
+        font-family: "Black Ops One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDWMkiLXNhSVzDbVAZuyyr4z9Aky4STKHkY9EypifMolqadRWHx96fGVkLIf8HLH6qqZHyDi48uUJRnkjsi5PDLeKBNpO73oC078nFw41X-egQH16rXEcSe_YNGwKm2k2P4jQbnne_Xko/s1600/black+ops+Call+of+duty+wallpaper.jpg");
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .mw2{
+        font-family: "Black Ops One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-image: url("https://portforward.com/help/call-of-duty-modern-warfare-2/default.webp");
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .mw1{
+        font-family: "Black Ops One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0c79d4cf-de24-40df-85fd-3e6e89e15ff9/da3v2wf-3d0839b4-1917-4398-88c8-c8b26711103b.png/v1/fill/w_1024,h_576,q_80,strp/cod4_rework_wallpaper___call_of_duty_4_remastered_by_muusedesign_da3v2wf-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6Ii9mLzBjNzlkNGNmLWRlMjQtNDBkZi04NWZkLTNlNmU4OWUxNWZmOS9kYTN2MndmLTNkMDgzOWI0LTE5MTctNDM5OC04OGM4LWM4YjI2NzExMTAzYi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.BzbGmNglMdurTJjDWOe0YWa2ZiRh4TVVGF4lPHZ8MpY");
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        }
+
+        .backrooms{
+        font-family: "Special Elite", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("https://uploads.onecompiler.io/435gma6sn/43tdpw9dg/Screenshot%202026-04-16%20082924.png");
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        filter: blur(1px);
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(2px);
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: none;
+        --window-bg-size: cover;
+        --window-bg-pos: center;
+        --static-g: block;
+        }
+
+        .fnaf{
+        font-family: OCR A Std, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4uhVBdexsvJmVvBnA4F-vr3XHzE-ZdVL1lZcttHxenx6TBM0f1SZRQtEsdcfI6Ca6PHqWItduRlCi_9gzDYB8hOLTAt_4X-13gf4jEJ1VVv9270ICde7_rES3if57RjK6LA2unVUwNhAlKzGfK2_rera7HKNgdKqeTM5Lsz8y35CxxrXNkbso7Ml5IFU/s1920/five-nights-at-freddys-movie-hd-wallpaper-uhdpaper.com-925@1@m.jpg");
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-filter: blur(4px);
+        --button-bg-color: rgba(0,0,0,0.5);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --static-g: block;
+        }
+
+        .weirdcore{
+        font-family: "Betania Patmos GDL", cursive;
+        font-weight: bold;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://substackcdn.com/image/fetch/$s_!h-wx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62a4a24c-72d1-4746-b263-b302bf8de19d_736x893.jpeg");
+        background-size: cover;
+        color: gray;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: Transparent;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: url("https://uploads.onecompiler.io/435gma6sn/43yjsbang/coreeyes.png");
+        --window-bg-size: 200px;
+        --window-bg-pos: center;
+        }
+
+        .vaporwave{
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://wallpapers-clan.com/wp-content/uploads/2025/09/vaporwave-mountains-pink-sun-synth-art-desktop-wallpaper-preview.jpg");
+        background-size: cover;
+        color: #4bf8f8;
+        text-shadow: 0px 2px 5px black;
+        --header-color: #de82ea;
+        --border-color: Transparent;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(10px);
+        --window-bg: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/283f2ae1-9d58-42ff-9ae9-08cab5fc6458/davw9qj-9b069b97-e9e6-4432-8809-02edd35a68a8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8yODNmMmFlMS05ZDU4LTQyZmYtOWFlOS0wOGNhYjVmYzY0NTgvZGF2dzlxai05YjA2OWI5Ny1lOWU2LTQ0MzItODgwOS0wMmVkZDM1YTY4YTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2iLV44VxEBThWyLYDRwRrHvTkNMJ65ba-WX4EW3KruU");
+        --window-bg-pos: center;
+        }
+
+        .windows-7{
+        font-family: Verdana;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://static.wikia.nocookie.net/windowswallpaper/images/0/0a/Windows_7_-_img0.jpg/revision/latest?cb=20250210043334");
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 2px 5px black;
+        --header-color: white;
+        --border-color: Transparent;
+        --button-gradient: Transparent;
+        --button-select-gradient: Transparent;
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: rgba(0,0,0,0.01);
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: none;
+        --window-filter: blur(20px);
+        --window-bg: url("https://uploads.onecompiler.io/435gma6sn/43yjnjm2m/windows-7-bg%20(1).png");
+        --window-bg-size: cover;
+        --window-bg-pos: center top;
+        --tw-bg-size: 100% 100%;
+        }
+
+        .fallout{
+        background-color: darkgreen;
+        font-family: "Nova Mono", system-ui;
+        font-weight: bold;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://imageio.forbes.com/blogs-images/insertcoin/files/2015/11/fallout-4-new-1200x675.jpg?format=jpg&height=900&width=1600&fit=bounds");
+        background-size: cover;
+        color: rgba(100, 100, 0);
+        filter: drop-shadow(0px 5px 5px #1c1c1c) blur(0.9px) saturate(125%) contrast(125%);
+        text-shadow: 0px 2px 5px black;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -50px;
+        margin-top: -25px;
+        --header-color: #9eb505;
+        --border-color: green;
+        --button-gradient: radial-gradient(circle, Transparent, rgba(100, 100, 0, 1));
+        --button-select-gradient: radial-gradient(circle, Transparent, #7efc00);
+        --button-select-bg-color: Transparent;
+        --button-select-color: yellow;
+        --border-radius: 30px;
+        --button-bg-color: darkgreen 0.8;
+        --button-select-bg-color: rgba(0,0,0,0.25);
+        --button-transition: background-color 0.1s linear 0s;
+        --scanline: block;
+        --static-g: block;
+        }
+
+        .iss{
+        background-color: black;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-image: url(https://www.nasa.gov/wp-content/uploads/2022/05/eo_pe_iss062e117852_sm.png?w=600);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: #4040C0;
+        filter: drop-shadow(0px 5px 5px #1c1c1c) saturate(125%) contrast(125%);
+        text-shadow: 0px 2px 5px black;
+        margin: 0;
+        padding: 0;
+        margin-top: -25px;
+        --header-color: #9595DF;
+        --border-color:  #9595DF;
+        --button-gradient: none;
+        --button-select-gradient: none;
+        --button-select-bg-color: rgba(0,0,255, 0.1);
+        --button-select-color: cyan;
+        --border-radius: 30px;
+        --button-bg-color: Transparent;
+        --button-transition: background-color 0.1s linear 0s, color 0.1s linear 0s;
+        --vignette: block;
+        }
+
+        .jwst{
+        background-color: black;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-image: url(https://static.scientificamerican.com/sciam/cache/file/B4A25793-4E05-462B-96F1D8C17425675E_source.jpg?w=1200);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: #fca695;
+        filter: drop-shadow(0px 5px 5px #1c1c1c) saturate(125%) contrast(125%);
+        text-shadow: 0px 2px 5px black;
+        margin: 0;
+        padding: 0;
+        margin-top: -25px;
+        --header-color: #fcdcb8;
+        --border-color:  #9595DF;
+        --button-gradient: none;
+        --button-select-gradient: none;
+        --button-select-bg-color: rgba(0,0,255, 0.1);
+        --button-select-color: cyan;
+        --border-radius: 30px;
+        --button-bg-color: Transparent;
+        --button-transition: background-color 0.1s linear 0s, color 0.1s linear 0s;
+        --vignette: block;
+        --star: block;
+        }
+
+        .hubble{
+        background-color: black;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-image: url(https://www.thebrighterside.news/uploads/2025/03/Hubble-Andromeda-main.jpg?format=webp&optimize=high&precrop=4%3A3%2Csmart);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: #fca695;
+        filter: drop-shadow(0px 5px 5px #1c1c1c) blur(0.7px) saturate(125%) contrast(125%);
+        text-shadow: 0px 2px 5px black;
+        margin: 0;
+        padding: 0;
+        margin-top: -25px;
+        --header-color: #fcdcb8;
+        --border-color:  #9595DF;
+        --button-gradient: none;
+        --button-select-gradient: none;
+        --button-select-bg-color: rgba(0,0,255, 0.1);
+        --button-select-color: cyan;
+        --border-radius: 30px;
+        --button-bg-color: Transparent;
+        --button-transition: background-color 0.1s linear 0s, color 0.1s linear 0s;
+        --vignette: block;
+        --scanline: block;
+        --star: block;
+        }
+
+        .glassdark{
+        background-color: black;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(rgba(50, 50, 255, 0.5), #2d3057, rgba(50, 50, 255, 0.5));
+        color: gray;
+        filter: drop-shadow(0px 15px 2px #1c1c1c);
+        text-shadow: 0px 2px 5px black;
+        border: ridge 5px gray;
+        --header-color: white;
+        --border-color: gray;
+        --button-gradient: radial-gradient(circle, Transparent, Transparent, rgba(255, 255, 255, 0.5));
+        --button-select-gradient: radial-gradient(circle, Transparent, Transparent, rgba(255, 255, 255, 0.5));
+        --button-select-bg-color: Transparent;
+        --button-select-color: white;
+        --border-radius: 30px;
+        --button-bg-color: white 0.5;
+        --button-select-bg-color: rgba(20,20,20,0.25);
+        --button-transition: background-color 0.25s ease-in-out;
+        }
+
+        .inverted{
+        background-color: #20223b;
+        font-family: "Rubik Bubbles", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: linear-gradient(#20223b, #406350, #20223b);
+        color: #fab800;
+        filter: drop-shadow(0px 0px 1px black) invert(100%);
+        min-height: 100%;
+        }
+
+        .spiderman{
+        background-color: #b32202;
+        font-family: "Fjalla One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://m.media-amazon.com/images/M/MV5BZWM0OWVmNTEtNWVkOS00MzgyLTkyMzgtMmE2ZTZiNjY4MmFiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg");
+        background-size: cover;
+        color: #a3a9ff;
+        --header-color: #ff5429;
+        --border-color: #ffc191;
+        --button-gradient: linear-gradient(Transparent, #000547, #470000);
+        --button-select-gradient: linear-gradient(#470000, #000547, Transparent);
+        --button-select-color: white;
+        --button-select-bg-color: Transparent
+        }
+
+        .usa{
+        background-color: #b32202;
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://cdn.pixabay.com/photo/2017/04/25/21/08/american-flag-2260839_1280.jpg");
+        background-size: cover;
+        color: lightgray;
+        --header-color: white;
+        --border-color: white;
+        --button-gradient: color(Transparent);
+        --button-select-gradient: linear-gradient(Transparent, #000547, #470000);
+        --button-select-color: white;
+        --button-select-bg-color: Transparent;
+        --particle-display: block;
+        }
+
+        button{
+          align-items: center;
+          background-color: var(--button-bg-color);
+          background-image: var(--button-gradient);
+          font-family: inherit;
+          font-weight: var(--header-bold);
+          font-style: normal;
+          color: var(--button-color);
+          border-radius: var(--border-radius);
+          filter: inherit;
+          backdrop-filter: var(--button-filter);
+          text-shadow: inherit;
+          border-style: var(--border-shape);
+          border-color: var(--border-color);
+          transition: var(--button-transition);
+          background-size: var(--button-bg-size);
+          background-position: var(--button-bg-pos);
+        }
+
+        button:hover{
+          background-color: var(--button-select-bg-color);
+          background-image: var(--button-select-gradient);
+          font-weight: var(--header-bold);
+          font-style: normal;
+          color: var(--button-select-color);
+          border-style: var(--border-select-shape);
+        }
+
+        select{
+          align-items: center;
+          background-color: var(--button-bg-color);
+          background-image: var(--button-gradient);
+          font-family: inherit;
+          font-weight: 400;
+          font-style: normal;
+          color: var(--header-color);
+          border-radius: var(--border-radius);
+          filter: inherit;
+          backdrop-filter: var(--button-filter);
+          text-shadow: inherit;
+          border-style: var(--border-shape);
+          border-color: var(--border-color);
+          transition: var(--button-transition);
+          background-size: var(--button-bg-size);
+          background-position: var(--button-bg-pos);
+        }
+
+        select:focus{
+          background-color: var(--button-select-bg-color);
+          background-image: var(--button-select-gradient);
+          font-weight: 400;
+          font-style: normal;
+          color: var(--button-select-color);
+          border-style: var(--border-select-shape);
+        }
+
+        input{
+          color: var(--header-color);
+          background-color: Transparent;
+          background-image: var(--button-gradient);
+          font-family: inherit;
+          font-weight: 400;
+          font-style: normal;
+          border-radius: var(--border-radius);
+          border-style: outset;
+          border-color: var(--border-color);
+          transition: var(--button-transition);
+          background-size: var(--button-bg-size);
+          background-position: var(--button-bg-pos);
+        }
+
+        .header{
+          color: var(--header-color);
+          transition: background-color 0.5s linear 0s, color 0.5s linear 0s;
+          font-weight: var(--header-bold);
+        }
+
+        .tabbar{
+          transition: background-color 0.5s linear 0s, color 0.5s linear 0s;
+          background: var(--window-bg);
+          background-size: var(--window-bg-size);
+          background-position: var(--window-bg-pos);
+          backdrop-filter: var(--window-filter);
+          border: solid 2px;
+          border-radius: var(--window-radius);
+          max-height: 400px;
+          min-height: 400px;
+          overflow: auto;
+          margin: 20px;
+          transition: background 0.5s linear 0s;
+          border-color: var(--window-bc);
+        }
+
+        input:focus{
+          outline: none;
+          background-color: var(--button-select-bg-color);
+          background-image: var(--button-select-gradient);
+          font-family: inherit;
+          font-weight: 400;
+          font-style: normal;
+          border-style: inset;
+          color: var(--button-select-color);
+        }
+
+        img{
+          border-style: outset;
+          border-color: rgba(0, 0, 0, 0.5);
+          border-radius: 24px;
+          display: var(--image-visibility);
+          align-items: center;
+          transition: background-color 0.5s linear 0s, color 0.5s linear 0s;
+        }
+
+        a{
+          user-select: none;
+          text-decoration: none;
+          color: inherit;
+          transition: background-color 0.5s linear 0s, color 0.5s linear 0s;
+        }
+
+        a:hover{
+          user-select: none;
+          text-decoration: underline;
+          color: inherit;
+          transition: background-color 0.5s linear 0s, color 0.5s linear 0s;
+        }
+
+        .particles{
+          position: sticky;
+          top: 0;
+            width: 2px;
+            height: 2px;
+            border-radius: var(--border-radius);
+            background: transparent;
+            box-shadow: 1801px 1439px #FFF , 456px 817px #FFF , 1626px 1904px #FFF , 399px 310px #FFF , 93px 1758px #FFF , 415px 241px #FFF , 1630px 386px #FFF , 176px 54px #FFF , 333px 427px #FFF , 420px 1564px #FFF , 1522px 1767px #FFF , 317px 417px #FFF , 1865px 260px #FFF , 87px 533px #FFF , 415px 643px #FFF , 1840px 1765px #FFF , 162px 782px #FFF , 1752px 1741px #FFF , 547px 260px #FFF , 450px 1917px #FFF , 1665px 427px #FFF , 189px 670px #FFF , 307px 922px #FFF , 583px 201px #FFF , 1290px 172px #FFF , 178px 1734px #FFF , 271px 865px #FFF , 558px 402px #FFF , 306px 1451px #FFF , 858px 139px #FFF , 1668px 583px #FFF , 1473px 36px #FFF , 163px 502px #FFF , 1092px 1751px #FFF , 392px 403px #FFF , 1259px 6px #FFF , 1663px 611px #FFF , 223px 55px #FFF , 94px 1268px #FFF , 629px 744px #FFF , 676px 1687px #FFF , 1666px 1443px #FFF , 535px 1841px #FFF , 1922px 1427px #FFF , 1621px 602px #FFF , 1892px 1800px #FFF , 1648px 1952px #FFF , 1671px 973px #FFF , 1271px 1073px #FFF , 441px 1374px #FFF , 491px 1390px #FFF , 638px 589px #FFF , 1631px 1149px #FFF , 508px 506px #FFF , 1788px 1735px #FFF , 1261px 1400px #FFF , 1998px 1704px #FFF , 1905px 1880px #FFF , 671px 306px #FFF , 442px 34px #FFF , 1735px 875px #FFF , 1417px 1330px #FFF , 694px 707px #FFF , 670px 1253px #FFF , 851px 149px #FFF , 221px 378px #FFF , 1412px 1861px #FFF , 212px 1784px #FFF , 344px 1101px #FFF , 69px 1019px #FFF , 1826px 1621px #FFF , 1377px 215px #FFF , 983px 1565px #FFF , 983px 1874px #FFF , 1076px 1455px #FFF , 1967px 1399px #FFF , 559px 1933px #FFF , 475px 645px #FFF , 1314px 1663px #FFF , 1169px 1017px #FFF , 515px 415px #FFF , 699px 11px #FFF , 1235px 92px #FFF , 1799px 834px #FFF , 1956px 1136px #FFF , 1172px 1944px #FFF , 1513px 792px #FFF , 1907px 1933px #FFF , 1374px 1643px #FFF , 566px 971px #FFF , 697px 761px #FFF , 953px 354px #FFF , 623px 1913px #FFF , 440px 210px #FFF , 1883px 1890px #FFF , 955px 385px #FFF , 178px 998px #FFF , 1965px 1742px #FFF , 1306px 26px #FFF , 21px 472px #FFF , 1529px 256px #FFF , 958px 1682px #FFF , 801px 599px #FFF , 1999px 631px #FFF , 33px 1989px #FFF , 1822px 1659px #FFF , 188px 676px #FFF , 64px 1451px #FFF , 882px 906px #FFF , 401px 31px #FFF , 1617px 435px #FFF , 1114px 1169px #FFF , 569px 1659px #FFF , 574px 1px #FFF , 861px 1871px #FFF , 1829px 54px #FFF , 1710px 954px #FFF , 1148px 1266px #FFF , 100px 935px #FFF , 904px 1042px #FFF , 659px 688px #FFF , 1254px 1371px #FFF , 241px 30px #FFF , 1419px 167px #FFF , 1369px 414px #FFF , 1297px 1045px #FFF , 1923px 1530px #FFF , 1767px 1845px #FFF , 897px 98px #FFF , 348px 1358px #FFF , 953px 614px #FFF , 1474px 1370px #FFF , 752px 728px #FFF , 42px 96px #FFF , 1955px 952px #FFF , 1982px 79px #FFF , 1297px 1093px #FFF , 1408px 1770px #FFF , 794px 110px #FFF , 480px 1969px #FFF , 416px 894px #FFF , 329px 875px #FFF , 1233px 1725px #FFF , 858px 1894px #FFF , 797px 1686px #FFF , 73px 689px #FFF , 607px 680px #FFF , 1526px 1919px #FFF , 1395px 549px #FFF , 814px 280px #FFF , 318px 1196px #FFF , 1388px 1071px #FFF , 1430px 682px #FFF , 115px 434px #FFF , 908px 1989px #FFF , 355px 834px #FFF , 290px 1518px #FFF , 326px 1852px #FFF , 97px 636px #FFF , 1965px 1188px #FFF , 529px 257px #FFF , 960px 484px #FFF , 584px 1515px #FFF , 1297px 1053px #FFF , 678px 1973px #FFF , 371px 1982px #FFF , 12px 1875px #FFF , 1031px 797px #FFF , 764px 1401px #FFF , 515px 317px #FFF , 441px 376px #FFF , 658px 97px #FFF , 607px 255px #FFF , 121px 1314px #FFF , 1154px 1116px #FFF , 168px 1187px #FFF , 1692px 1554px #FFF , 559px 242px #FFF , 897px 155px #FFF , 1746px 1605px #FFF , 440px 66px #FFF , 1581px 1100px #FFF , 862px 737px #FFF , 1369px 314px #FFF , 1832px 1405px #FFF , 1364px 1356px #FFF , 1028px 269px #FFF , 1869px 192px #FFF , 405px 155px #FFF , 871px 1658px #FFF , 1977px 1579px #FFF , 1413px 277px #FFF , 876px 1817px #FFF , 1318px 429px #FFF , 1984px 354px #FFF , 858px 337px #FFF , 183px 738px #FFF , 1238px 133px #FFF , 1437px 1957px #FFF , 341px 668px #FFF , 640px 1637px #FFF , 1477px 665px #FFF , 465px 1111px #FFF , 906px 1016px #FFF , 799px 1822px #FFF , 21px 450px #FFF , 1100px 1713px #FFF , 525px 851px #FFF , 463px 1114px #FFF , 492px 1502px #FFF , 1607px 412px #FFF , 1435px 788px #FFF , 54px 1102px #FFF , 558px 803px #FFF , 905px 1637px #FFF , 1033px 1405px #FFF , 836px 1977px #FFF , 1399px 207px #FFF , 1183px 836px #FFF , 1468px 681px #FFF , 1392px 629px #FFF , 52px 83px #FFF , 1916px 123px #FFF , 499px 1884px #FFF , 1886px 1909px #FFF , 1762px 628px #FFF , 538px 1553px #FFF , 535px 1626px #FFF , 1652px 1674px #FFF , 663px 683px #FFF , 1562px 1833px #FFF , 531px 217px #FFF , 1481px 1753px #FFF , 1428px 1839px #FFF , 281px 134px #FFF , 1092px 1512px #FFF , 338px 549px #FFF , 839px 742px #FFF , 164px 1145px #FFF , 563px 115px #FFF , 1224px 332px #FFF , 271px 30px #FFF , 1353px 984px #FFF , 163px 1385px #FFF , 144px 1613px #FFF , 1214px 1002px #FFF , 1879px 560px #FFF , 1670px 1677px #FFF , 1718px 1048px #FFF , 1631px 824px #FFF , 606px 1817px #FFF , 962px 1004px #FFF , 1658px 868px #FFF , 438px 903px #FFF , 1538px 962px #FFF , 461px 909px #FFF , 70px 585px #FFF , 1629px 296px #FFF , 498px 945px #FFF , 1818px 1457px #FFF , 1547px 86px #FFF , 77px 1503px #FFF , 82px 1830px #FFF , 852px 1619px #FFF , 1139px 1436px #FFF , 1385px 599px #FFF , 1792px 901px #FFF , 1552px 238px #FFF , 1368px 1164px #FFF , 1451px 1401px #FFF , 236px 1298px #FFF , 1832px 1437px #FFF , 1910px 637px #FFF , 456px 628px #FFF , 430px 1134px #FFF , 1862px 869px #FFF , 1192px 369px #FFF , 778px 1962px #FFF , 1246px 15px #FFF , 512px 1784px #FFF , 1833px 1095px #FFF , 1811px 1893px #FFF , 711px 1235px #FFF , 1411px 245px #FFF , 1489px 1609px #FFF , 1586px 1614px #FFF , 1406px 1861px #FFF , 1705px 1111px #FFF , 3px 1439px #FFF , 1944px 41px #FFF , 1138px 1768px #FFF , 1090px 326px #FFF , 1733px 1440px #FFF , 1808px 1804px #FFF , 1064px 733px #FFF , 1938px 1461px #FFF , 442px 1827px #FFF , 1340px 1826px #FFF , 434px 162px #FFF , 717px 298px #FFF , 1355px 145px #FFF , 1077px 412px #FFF , 714px 877px #FFF , 963px 1367px #FFF , 912px 1422px #FFF , 1999px 857px #FFF , 1054px 394px #FFF , 615px 1737px #FFF , 547px 1048px #FFF , 277px 701px #FFF , 857px 1571px #FFF , 1459px 1918px #FFF , 1693px 676px #FFF , 1833px 1260px #FFF , 1730px 1899px #FFF , 748px 594px #FFF , 9px 1918px #FFF , 319px 143px #FFF , 287px 1902px #FFF , 819px 100px #FFF , 107px 194px #FFF , 21px 499px #FFF , 1868px 304px #FFF , 1434px 1080px #FFF , 459px 1960px #FFF , 560px 1977px #FFF , 1114px 1552px #FFF , 271px 1611px #FFF , 1259px 1882px #FFF , 550px 1637px #FFF , 1719px 1360px #FFF , 1367px 1160px #FFF , 239px 247px #FFF , 1956px 136px #FFF , 22px 1700px #FFF , 1792px 535px #FFF , 441px 971px #FFF , 483px 1098px #FFF , 1672px 1595px #FFF , 1955px 1825px #FFF , 913px 310px #FFF , 1058px 1994px #FFF , 1516px 1015px #FFF , 696px 863px #FFF , 1203px 935px #FFF , 1964px 197px #FFF , 1471px 719px #FFF , 300px 1530px #FFF , 1720px 230px #FFF , 168px 1160px #FFF , 924px 1290px #FFF , 217px 1818px #FFF , 1546px 356px #FFF , 263px 1033px #FFF , 681px 1509px #FFF , 1535px 1185px #FFF , 809px 488px #FFF , 991px 1413px #FFF , 1279px 1697px #FFF , 1099px 1382px #FFF , 1867px 221px #FFF , 444px 2000px #FFF , 1189px 115px #FFF , 1351px 573px #FFF , 331px 1905px #FFF , 321px 32px #FFF , 691px 449px #FFF , 582px 630px #FFF , 768px 1436px #FFF , 1613px 1652px #FFF , 1157px 872px #FFF , 437px 1894px #FFF , 568px 589px #FFF , 1279px 502px #FFF , 147px 1316px #FFF , 948px 1963px #FFF , 678px 966px #FFF , 650px 1212px #FFF , 269px 1102px #FFF , 1801px 85px #FFF , 1171px 1111px #FFF , 1029px 1737px #FFF , 1005px 629px #FFF , 1824px 1809px #FFF , 124px 1807px #FFF , 1121px 266px #FFF , 1599px 1150px #FFF , 1573px 715px #FFF , 1412px 1922px #FFF , 1673px 1622px #FFF , 1879px 308px #FFF , 157px 736px #FFF , 816px 1614px #FFF , 1897px 182px #FFF , 1070px 550px #FFF , 1626px 1457px #FFF , 1499px 808px #FFF , 167px 1165px #FFF , 1189px 305px #FFF , 791px 411px #FFF , 1530px 185px #FFF , 573px 159px #FFF , 1448px 1317px #FFF , 1572px 1238px #FFF , 1196px 867px #FFF , 1570px 143px #FFF , 446px 399px #FFF , 1306px 1179px #FFF , 754px 1124px #FFF , 285px 1302px #FFF , 637px 794px #FFF , 164px 1642px #FFF , 1228px 1793px #FFF , 780px 575px #FFF , 138px 56px #FFF , 1748px 817px #FFF , 1672px 107px #FFF , 371px 1402px #FFF , 1727px 813px #FFF , 1298px 603px #FFF , 317px 891px #FFF , 1193px 1954px #FFF , 228px 1888px #FFF , 1702px 1217px #FFF , 233px 1416px #FFF , 1472px 1663px #FFF , 1255px 949px #FFF , 708px 630px #FFF , 1938px 1268px #FFF , 65px 788px #FFF , 1341px 1506px #FFF , 208px 734px #FFF , 1012px 1183px #FFF , 782px 1755px #FFF , 747px 82px #FFF , 1845px 1690px #FFF , 1718px 1473px #FFF , 484px 864px #FFF , 1819px 1002px #FFF , 941px 558px #FFF , 886px 719px #FFF , 487px 899px #FFF , 277px 1893px #FFF , 1819px 1336px #FFF , 118px 940px #FFF , 1457px 1722px #FFF , 545px 647px #FFF , 1061px 954px #FFF , 709px 298px #FFF , 1517px 1896px #FFF , 1635px 500px #FFF , 1022px 755px #FFF , 415px 603px #FFF , 234px 765px #FFF , 1771px 916px #FFF , 1160px 655px #FFF , 654px 178px #FFF , 1939px 327px #FFF , 153px 1268px #FFF , 860px 1795px #FFF , 941px 1816px #FFF , 954px 1100px #FFF , 1201px 440px #FFF , 721px 155px #FFF , 521px 216px #FFF , 1256px 1267px #FFF , 846px 797px #FFF , 1035px 1481px #FFF , 1914px 1409px #FFF , 1268px 1421px #FFF , 1202px 1665px #FFF , 908px 168px #FFF , 1323px 1352px #FFF , 11px 1170px #FFF , 1974px 1388px #FFF , 1159px 281px #FFF , 52px 1374px #FFF , 828px 933px #FFF , 1864px 128px #FFF , 544px 1709px #FFF , 870px 126px #FFF , 1355px 1207px #FFF , 771px 1770px #FFF , 91px 295px #FFF , 244px 1536px #FFF , 1377px 256px #FFF , 1920px 117px #FFF , 372px 1809px #FFF , 1355px 1364px #FFF , 1345px 1612px #FFF , 427px 491px #FFF , 337px 1706px #FFF , 1653px 236px #FFF , 1210px 1085px #FFF , 51px 84px #FFF , 1753px 13px #FFF , 1653px 1393px #FFF , 373px 1820px #FFF , 303px 327px #FFF , 1397px 404px #FFF , 69px 314px #FFF , 1636px 1640px #FFF , 1309px 1277px #FFF , 412px 984px #FFF , 41px 1147px #FFF , 678px 1928px #FFF , 1444px 326px #FFF , 1753px 750px #FFF , 295px 756px #FFF , 1189px 1299px #FFF , 571px 1209px #FFF , 1484px 613px #FFF , 589px 1085px #FFF , 87px 567px #FFF , 1799px 1101px #FFF , 1827px 1284px #FFF , 1008px 849px #FFF , 737px 1970px #FFF , 1036px 1839px #FFF , 1031px 1428px #FFF , 879px 549px #FFF , 1150px 1296px #FFF , 908px 622px #FFF , 916px 1207px #FFF , 1746px 1251px #FFF , 726px 1598px #FFF , 1855px 1123px #FFF , 1023px 694px #FFF , 815px 1837px #FFF , 1491px 1578px #FFF , 1085px 1044px #FFF , 1836px 323px #FFF , 368px 1052px #FFF , 1201px 1705px #FFF , 1998px 1317px #FFF , 1261px 719px #FFF , 1810px 314px #FFF , 1127px 1866px #FFF , 535px 279px #FFF , 1031px 205px #FFF , 1698px 377px #FFF , 1435px 537px #FFF , 1643px 1468px #FFF , 1498px 440px #FFF , 1520px 872px #FFF , 1328px 1098px #FFF , 1579px 976px #FFF , 846px 1824px #FFF , 346px 652px #FFF , 1597px 564px #FFF , 498px 1418px #FFF , 4px 137px #FFF , 692px 1534px #FFF , 1626px 1543px #FFF , 1028px 844px #FFF , 352px 279px #FFF , 976px 548px #FFF , 397px 358px #FFF , 1567px 520px #FFF , 779px 1531px #FFF , 112px 919px #FFF , 1934px 623px #FFF , 1308px 1358px #FFF , 760px 150px #FFF , 981px 1801px #FFF , 140px 120px #FFF , 755px 696px #FFF , 756px 1760px #FFF , 1375px 684px #FFF , 465px 697px #FFF , 427px 1236px #FFF , 1977px 961px #FFF , 1086px 1046px #FFF , 776px 556px #FFF , 107px 1689px #FFF , 149px 646px #FFF , 253px 880px #FFF , 1393px 1831px #FFF , 1923px 1925px #FFF , 217px 250px #FFF , 933px 330px #FFF , 476px 269px #FFF , 1823px 1004px #FFF , 948px 1806px #FFF , 1778px 1914px #FFF , 900px 376px #FFF , 362px 722px #FFF , 1946px 1292px #FFF , 237px 169px #FFF , 977px 634px #FFF , 409px 1024px #FFF , 571px 1355px #FFF , 1656px 168px #FFF , 1677px 1549px #FFF , 736px 1158px #FFF , 1930px 881px #FFF , 61px 1472px #FFF , 1402px 41px #FFF , 1914px 1825px #FFF , 1758px 1118px #FFF , 1767px 88px #FFF , 82px 802px #FFF , 1753px 49px #FFF , 389px 1710px #FFF , 1666px 57px #FFF , 1869px 1008px #FFF , 31px 406px #FFF , 1537px 1930px #FFF , 337px 938px #FFF , 1164px 1070px #FFF , 1849px 1356px #FFF , 294px 1337px #FFF , 361px 1484px #FFF , 1737px 1896px #FFF , 1947px 1426px #FFF , 1675px 1379px #FFF , 635px 982px #FFF , 854px 951px #FFF , 1282px 1748px #FFF , 1788px 437px #FFF , 280px 280px #FFF , 1899px 1284px #FFF , 490px 678px #FFF , 1555px 918px #FFF , 1055px 934px #FFF , 957px 739px #FFF , 1940px 1135px #FFF , 421px 800px #FFF , 206px 1805px #FFF , 1330px 1294px #FFF , 871px 1859px #FFF , 1350px 1570px #FFF , 1512px 11px #FFF , 279px 563px #FFF , 1690px 481px #FFF , 552px 1766px #FFF , 1077px 1890px #FFF , 1250px 1840px #FFF , 509px 676px #FFF , 1239px 1655px #FFF , 542px 1802px #FFF , 1905px 1892px #FFF , 295px 1317px #FFF , 391px 713px #FFF , 1756px 1577px #FFF , 1806px 1512px #FFF , 780px 427px #FFF , 79px 1630px #FFF , 338px 1577px #FFF , 378px 825px #FFF , 1941px 1392px #FFF , 1992px 239px #FFF , 1896px 1396px #FFF , 660px 1913px #FFF , 1382px 600px #FFF , 210px 1518px #FFF , 953px 554px #FFF , 607px 420px #FFF , 1722px 878px #FFF , 1279px 818px #FFF , 39px 1115px #FFF , 1920px 210px #FFF , 806px 1228px #FFF , 640px 1465px #FFF , 1637px 1468px #FFF , 1635px 389px #FFF;
+            animation: animStar 20s linear infinite;
+            display: var(--star);
+        }
+
+        .snow{
+          position: sticky;
+          top: 0;
+            width: 2px;
+            height: 2px;
+            border-radius: var(--border-radius);
+            background: transparent;
+            box-shadow: 1801px 1439px #FFF , 456px 817px #FFF , 1626px 1904px #FFF , 399px 310px #FFF , 93px 1758px #FFF , 415px 241px #FFF , 1630px 386px #FFF , 176px 54px #FFF , 333px 427px #FFF , 420px 1564px #FFF , 1522px 1767px #FFF , 317px 417px #FFF , 1865px 260px #FFF , 87px 533px #FFF , 415px 643px #FFF , 1840px 1765px #FFF , 162px 782px #FFF , 1752px 1741px #FFF , 547px 260px #FFF , 450px 1917px #FFF , 1665px 427px #FFF , 189px 670px #FFF , 307px 922px #FFF , 583px 201px #FFF , 1290px 172px #FFF , 178px 1734px #FFF , 271px 865px #FFF , 558px 402px #FFF , 306px 1451px #FFF , 858px 139px #FFF , 1668px 583px #FFF , 1473px 36px #FFF , 163px 502px #FFF , 1092px 1751px #FFF , 392px 403px #FFF , 1259px 6px #FFF , 1663px 611px #FFF , 223px 55px #FFF , 94px 1268px #FFF , 629px 744px #FFF , 676px 1687px #FFF , 1666px 1443px #FFF , 535px 1841px #FFF , 1922px 1427px #FFF , 1621px 602px #FFF , 1892px 1800px #FFF , 1648px 1952px #FFF , 1671px 973px #FFF , 1271px 1073px #FFF , 441px 1374px #FFF , 491px 1390px #FFF , 638px 589px #FFF , 1631px 1149px #FFF , 508px 506px #FFF , 1788px 1735px #FFF , 1261px 1400px #FFF , 1998px 1704px #FFF , 1905px 1880px #FFF , 671px 306px #FFF , 442px 34px #FFF , 1735px 875px #FFF , 1417px 1330px #FFF , 694px 707px #FFF , 670px 1253px #FFF , 851px 149px #FFF , 221px 378px #FFF , 1412px 1861px #FFF , 212px 1784px #FFF , 344px 1101px #FFF , 69px 1019px #FFF , 1826px 1621px #FFF , 1377px 215px #FFF , 983px 1565px #FFF , 983px 1874px #FFF , 1076px 1455px #FFF , 1967px 1399px #FFF , 559px 1933px #FFF , 475px 645px #FFF , 1314px 1663px #FFF , 1169px 1017px #FFF , 515px 415px #FFF , 699px 11px #FFF , 1235px 92px #FFF , 1799px 834px #FFF , 1956px 1136px #FFF , 1172px 1944px #FFF , 1513px 792px #FFF , 1907px 1933px #FFF , 1374px 1643px #FFF , 566px 971px #FFF , 697px 761px #FFF , 953px 354px #FFF , 623px 1913px #FFF , 440px 210px #FFF , 1883px 1890px #FFF , 955px 385px #FFF , 178px 998px #FFF , 1965px 1742px #FFF , 1306px 26px #FFF , 21px 472px #FFF , 1529px 256px #FFF , 958px 1682px #FFF , 801px 599px #FFF , 1999px 631px #FFF , 33px 1989px #FFF , 1822px 1659px #FFF , 188px 676px #FFF , 64px 1451px #FFF , 882px 906px #FFF , 401px 31px #FFF , 1617px 435px #FFF , 1114px 1169px #FFF , 569px 1659px #FFF , 574px 1px #FFF , 861px 1871px #FFF , 1829px 54px #FFF , 1710px 954px #FFF , 1148px 1266px #FFF , 100px 935px #FFF , 904px 1042px #FFF , 659px 688px #FFF , 1254px 1371px #FFF , 241px 30px #FFF , 1419px 167px #FFF , 1369px 414px #FFF , 1297px 1045px #FFF , 1923px 1530px #FFF , 1767px 1845px #FFF , 897px 98px #FFF , 348px 1358px #FFF , 953px 614px #FFF , 1474px 1370px #FFF , 752px 728px #FFF , 42px 96px #FFF , 1955px 952px #FFF , 1982px 79px #FFF , 1297px 1093px #FFF , 1408px 1770px #FFF , 794px 110px #FFF , 480px 1969px #FFF , 416px 894px #FFF , 329px 875px #FFF , 1233px 1725px #FFF , 858px 1894px #FFF , 797px 1686px #FFF , 73px 689px #FFF , 607px 680px #FFF , 1526px 1919px #FFF , 1395px 549px #FFF , 814px 280px #FFF , 318px 1196px #FFF , 1388px 1071px #FFF , 1430px 682px #FFF , 115px 434px #FFF , 908px 1989px #FFF , 355px 834px #FFF , 290px 1518px #FFF , 326px 1852px #FFF , 97px 636px #FFF , 1965px 1188px #FFF , 529px 257px #FFF , 960px 484px #FFF , 584px 1515px #FFF , 1297px 1053px #FFF , 678px 1973px #FFF , 371px 1982px #FFF , 12px 1875px #FFF , 1031px 797px #FFF , 764px 1401px #FFF , 515px 317px #FFF , 441px 376px #FFF , 658px 97px #FFF , 607px 255px #FFF , 121px 1314px #FFF , 1154px 1116px #FFF , 168px 1187px #FFF , 1692px 1554px #FFF , 559px 242px #FFF , 897px 155px #FFF , 1746px 1605px #FFF , 440px 66px #FFF , 1581px 1100px #FFF , 862px 737px #FFF , 1369px 314px #FFF , 1832px 1405px #FFF , 1364px 1356px #FFF , 1028px 269px #FFF , 1869px 192px #FFF , 405px 155px #FFF , 871px 1658px #FFF , 1977px 1579px #FFF , 1413px 277px #FFF , 876px 1817px #FFF , 1318px 429px #FFF , 1984px 354px #FFF , 858px 337px #FFF , 183px 738px #FFF , 1238px 133px #FFF , 1437px 1957px #FFF , 341px 668px #FFF , 640px 1637px #FFF , 1477px 665px #FFF , 465px 1111px #FFF , 906px 1016px #FFF , 799px 1822px #FFF , 21px 450px #FFF , 1100px 1713px #FFF , 525px 851px #FFF , 463px 1114px #FFF , 492px 1502px #FFF , 1607px 412px #FFF , 1435px 788px #FFF , 54px 1102px #FFF , 558px 803px #FFF , 905px 1637px #FFF , 1033px 1405px #FFF , 836px 1977px #FFF , 1399px 207px #FFF , 1183px 836px #FFF , 1468px 681px #FFF , 1392px 629px #FFF , 52px 83px #FFF , 1916px 123px #FFF , 499px 1884px #FFF , 1886px 1909px #FFF , 1762px 628px #FFF , 538px 1553px #FFF , 535px 1626px #FFF , 1652px 1674px #FFF , 663px 683px #FFF , 1562px 1833px #FFF , 531px 217px #FFF , 1481px 1753px #FFF , 1428px 1839px #FFF , 281px 134px #FFF , 1092px 1512px #FFF , 338px 549px #FFF , 839px 742px #FFF , 164px 1145px #FFF , 563px 115px #FFF , 1224px 332px #FFF , 271px 30px #FFF , 1353px 984px #FFF , 163px 1385px #FFF , 144px 1613px #FFF , 1214px 1002px #FFF , 1879px 560px #FFF , 1670px 1677px #FFF , 1718px 1048px #FFF , 1631px 824px #FFF , 606px 1817px #FFF , 962px 1004px #FFF , 1658px 868px #FFF , 438px 903px #FFF , 1538px 962px #FFF , 461px 909px #FFF , 70px 585px #FFF , 1629px 296px #FFF , 498px 945px #FFF , 1818px 1457px #FFF , 1547px 86px #FFF , 77px 1503px #FFF , 82px 1830px #FFF , 852px 1619px #FFF , 1139px 1436px #FFF , 1385px 599px #FFF , 1792px 901px #FFF , 1552px 238px #FFF , 1368px 1164px #FFF , 1451px 1401px #FFF , 236px 1298px #FFF , 1832px 1437px #FFF , 1910px 637px #FFF , 456px 628px #FFF , 430px 1134px #FFF , 1862px 869px #FFF , 1192px 369px #FFF , 778px 1962px #FFF , 1246px 15px #FFF , 512px 1784px #FFF , 1833px 1095px #FFF , 1811px 1893px #FFF , 711px 1235px #FFF , 1411px 245px #FFF , 1489px 1609px #FFF , 1586px 1614px #FFF , 1406px 1861px #FFF , 1705px 1111px #FFF , 3px 1439px #FFF , 1944px 41px #FFF , 1138px 1768px #FFF , 1090px 326px #FFF , 1733px 1440px #FFF , 1808px 1804px #FFF , 1064px 733px #FFF , 1938px 1461px #FFF , 442px 1827px #FFF , 1340px 1826px #FFF , 434px 162px #FFF , 717px 298px #FFF , 1355px 145px #FFF , 1077px 412px #FFF , 714px 877px #FFF , 963px 1367px #FFF , 912px 1422px #FFF , 1999px 857px #FFF , 1054px 394px #FFF , 615px 1737px #FFF , 547px 1048px #FFF , 277px 701px #FFF , 857px 1571px #FFF , 1459px 1918px #FFF , 1693px 676px #FFF , 1833px 1260px #FFF , 1730px 1899px #FFF , 748px 594px #FFF , 9px 1918px #FFF , 319px 143px #FFF , 287px 1902px #FFF , 819px 100px #FFF , 107px 194px #FFF , 21px 499px #FFF , 1868px 304px #FFF , 1434px 1080px #FFF , 459px 1960px #FFF , 560px 1977px #FFF , 1114px 1552px #FFF , 271px 1611px #FFF , 1259px 1882px #FFF , 550px 1637px #FFF , 1719px 1360px #FFF , 1367px 1160px #FFF , 239px 247px #FFF , 1956px 136px #FFF , 22px 1700px #FFF , 1792px 535px #FFF , 441px 971px #FFF , 483px 1098px #FFF , 1672px 1595px #FFF , 1955px 1825px #FFF , 913px 310px #FFF , 1058px 1994px #FFF , 1516px 1015px #FFF , 696px 863px #FFF , 1203px 935px #FFF , 1964px 197px #FFF , 1471px 719px #FFF , 300px 1530px #FFF , 1720px 230px #FFF , 168px 1160px #FFF , 924px 1290px #FFF , 217px 1818px #FFF , 1546px 356px #FFF , 263px 1033px #FFF , 681px 1509px #FFF , 1535px 1185px #FFF , 809px 488px #FFF , 991px 1413px #FFF , 1279px 1697px #FFF , 1099px 1382px #FFF , 1867px 221px #FFF , 444px 2000px #FFF , 1189px 115px #FFF , 1351px 573px #FFF , 331px 1905px #FFF , 321px 32px #FFF , 691px 449px #FFF , 582px 630px #FFF , 768px 1436px #FFF , 1613px 1652px #FFF , 1157px 872px #FFF , 437px 1894px #FFF , 568px 589px #FFF , 1279px 502px #FFF , 147px 1316px #FFF , 948px 1963px #FFF , 678px 966px #FFF , 650px 1212px #FFF , 269px 1102px #FFF , 1801px 85px #FFF , 1171px 1111px #FFF , 1029px 1737px #FFF , 1005px 629px #FFF , 1824px 1809px #FFF , 124px 1807px #FFF , 1121px 266px #FFF , 1599px 1150px #FFF , 1573px 715px #FFF , 1412px 1922px #FFF , 1673px 1622px #FFF , 1879px 308px #FFF , 157px 736px #FFF , 816px 1614px #FFF , 1897px 182px #FFF , 1070px 550px #FFF , 1626px 1457px #FFF , 1499px 808px #FFF , 167px 1165px #FFF , 1189px 305px #FFF , 791px 411px #FFF , 1530px 185px #FFF , 573px 159px #FFF , 1448px 1317px #FFF , 1572px 1238px #FFF , 1196px 867px #FFF , 1570px 143px #FFF , 446px 399px #FFF , 1306px 1179px #FFF , 754px 1124px #FFF , 285px 1302px #FFF , 637px 794px #FFF , 164px 1642px #FFF , 1228px 1793px #FFF , 780px 575px #FFF , 138px 56px #FFF , 1748px 817px #FFF , 1672px 107px #FFF , 371px 1402px #FFF , 1727px 813px #FFF , 1298px 603px #FFF , 317px 891px #FFF , 1193px 1954px #FFF , 228px 1888px #FFF , 1702px 1217px #FFF , 233px 1416px #FFF , 1472px 1663px #FFF , 1255px 949px #FFF , 708px 630px #FFF , 1938px 1268px #FFF , 65px 788px #FFF , 1341px 1506px #FFF , 208px 734px #FFF , 1012px 1183px #FFF , 782px 1755px #FFF , 747px 82px #FFF , 1845px 1690px #FFF , 1718px 1473px #FFF , 484px 864px #FFF , 1819px 1002px #FFF , 941px 558px #FFF , 886px 719px #FFF , 487px 899px #FFF , 277px 1893px #FFF , 1819px 1336px #FFF , 118px 940px #FFF , 1457px 1722px #FFF , 545px 647px #FFF , 1061px 954px #FFF , 709px 298px #FFF , 1517px 1896px #FFF , 1635px 500px #FFF , 1022px 755px #FFF , 415px 603px #FFF , 234px 765px #FFF , 1771px 916px #FFF , 1160px 655px #FFF , 654px 178px #FFF , 1939px 327px #FFF , 153px 1268px #FFF , 860px 1795px #FFF , 941px 1816px #FFF , 954px 1100px #FFF , 1201px 440px #FFF , 721px 155px #FFF , 521px 216px #FFF , 1256px 1267px #FFF , 846px 797px #FFF , 1035px 1481px #FFF , 1914px 1409px #FFF , 1268px 1421px #FFF , 1202px 1665px #FFF , 908px 168px #FFF , 1323px 1352px #FFF , 11px 1170px #FFF , 1974px 1388px #FFF , 1159px 281px #FFF , 52px 1374px #FFF , 828px 933px #FFF , 1864px 128px #FFF , 544px 1709px #FFF , 870px 126px #FFF , 1355px 1207px #FFF , 771px 1770px #FFF , 91px 295px #FFF , 244px 1536px #FFF , 1377px 256px #FFF , 1920px 117px #FFF , 372px 1809px #FFF , 1355px 1364px #FFF , 1345px 1612px #FFF , 427px 491px #FFF , 337px 1706px #FFF , 1653px 236px #FFF , 1210px 1085px #FFF , 51px 84px #FFF , 1753px 13px #FFF , 1653px 1393px #FFF , 373px 1820px #FFF , 303px 327px #FFF , 1397px 404px #FFF , 69px 314px #FFF , 1636px 1640px #FFF , 1309px 1277px #FFF , 412px 984px #FFF , 41px 1147px #FFF , 678px 1928px #FFF , 1444px 326px #FFF , 1753px 750px #FFF , 295px 756px #FFF , 1189px 1299px #FFF , 571px 1209px #FFF , 1484px 613px #FFF , 589px 1085px #FFF , 87px 567px #FFF , 1799px 1101px #FFF , 1827px 1284px #FFF , 1008px 849px #FFF , 737px 1970px #FFF , 1036px 1839px #FFF , 1031px 1428px #FFF , 879px 549px #FFF , 1150px 1296px #FFF , 908px 622px #FFF , 916px 1207px #FFF , 1746px 1251px #FFF , 726px 1598px #FFF , 1855px 1123px #FFF , 1023px 694px #FFF , 815px 1837px #FFF , 1491px 1578px #FFF , 1085px 1044px #FFF , 1836px 323px #FFF , 368px 1052px #FFF , 1201px 1705px #FFF , 1998px 1317px #FFF , 1261px 719px #FFF , 1810px 314px #FFF , 1127px 1866px #FFF , 535px 279px #FFF , 1031px 205px #FFF , 1698px 377px #FFF , 1435px 537px #FFF , 1643px 1468px #FFF , 1498px 440px #FFF , 1520px 872px #FFF , 1328px 1098px #FFF , 1579px 976px #FFF , 846px 1824px #FFF , 346px 652px #FFF , 1597px 564px #FFF , 498px 1418px #FFF , 4px 137px #FFF , 692px 1534px #FFF , 1626px 1543px #FFF , 1028px 844px #FFF , 352px 279px #FFF , 976px 548px #FFF , 397px 358px #FFF , 1567px 520px #FFF , 779px 1531px #FFF , 112px 919px #FFF , 1934px 623px #FFF , 1308px 1358px #FFF , 760px 150px #FFF , 981px 1801px #FFF , 140px 120px #FFF , 755px 696px #FFF , 756px 1760px #FFF , 1375px 684px #FFF , 465px 697px #FFF , 427px 1236px #FFF , 1977px 961px #FFF , 1086px 1046px #FFF , 776px 556px #FFF , 107px 1689px #FFF , 149px 646px #FFF , 253px 880px #FFF , 1393px 1831px #FFF , 1923px 1925px #FFF , 217px 250px #FFF , 933px 330px #FFF , 476px 269px #FFF , 1823px 1004px #FFF , 948px 1806px #FFF , 1778px 1914px #FFF , 900px 376px #FFF , 362px 722px #FFF , 1946px 1292px #FFF , 237px 169px #FFF , 977px 634px #FFF , 409px 1024px #FFF , 571px 1355px #FFF , 1656px 168px #FFF , 1677px 1549px #FFF , 736px 1158px #FFF , 1930px 881px #FFF , 61px 1472px #FFF , 1402px 41px #FFF , 1914px 1825px #FFF , 1758px 1118px #FFF , 1767px 88px #FFF , 82px 802px #FFF , 1753px 49px #FFF , 389px 1710px #FFF , 1666px 57px #FFF , 1869px 1008px #FFF , 31px 406px #FFF , 1537px 1930px #FFF , 337px 938px #FFF , 1164px 1070px #FFF , 1849px 1356px #FFF , 294px 1337px #FFF , 361px 1484px #FFF , 1737px 1896px #FFF , 1947px 1426px #FFF , 1675px 1379px #FFF , 635px 982px #FFF , 854px 951px #FFF , 1282px 1748px #FFF , 1788px 437px #FFF , 280px 280px #FFF , 1899px 1284px #FFF , 490px 678px #FFF , 1555px 918px #FFF , 1055px 934px #FFF , 957px 739px #FFF , 1940px 1135px #FFF , 421px 800px #FFF , 206px 1805px #FFF , 1330px 1294px #FFF , 871px 1859px #FFF , 1350px 1570px #FFF , 1512px 11px #FFF , 279px 563px #FFF , 1690px 481px #FFF , 552px 1766px #FFF , 1077px 1890px #FFF , 1250px 1840px #FFF , 509px 676px #FFF , 1239px 1655px #FFF , 542px 1802px #FFF , 1905px 1892px #FFF , 295px 1317px #FFF , 391px 713px #FFF , 1756px 1577px #FFF , 1806px 1512px #FFF , 780px 427px #FFF , 79px 1630px #FFF , 338px 1577px #FFF , 378px 825px #FFF , 1941px 1392px #FFF , 1992px 239px #FFF , 1896px 1396px #FFF , 660px 1913px #FFF , 1382px 600px #FFF , 210px 1518px #FFF , 953px 554px #FFF , 607px 420px #FFF , 1722px 878px #FFF , 1279px 818px #FFF , 39px 1115px #FFF , 1920px 210px #FFF , 806px 1228px #FFF , 640px 1465px #FFF , 1637px 1468px #FFF , 1635px 389px #FFF;
+            animation: animSnow 20s linear infinite;
+            display: var(--snow);
+        }
+
+        .vignette{
+          position: sticky;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
+          background: radial-gradient(circle, Transparent 70%, black);
+          user-select: none;
+          pointer-events: none;
+          display: var(--vignette);
+        }
+
+        .scanline{
+          position: sticky;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5) ,rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5) ,rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5) ,rgba(68, 68, 68, 0.5), Transparent, rgba(68, 68, 68, 0.5) );
+          user-select: none;
+          pointer-events: none;
+          display: var(--scanline);
+          animation: animScan 0.25s linear infinite;
+          z-index: 1;
+        }
+
+        .staticgrain{
+          position: sticky;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0.1;
+          display: var(--static-g, none);
+          user-select: none;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        @keyframes animStar {
+        0% {
+          transform: translateY(-125px);
+          opacity: 0;
+        }
+
+        25% {
+          transform: translateY(-250px);
+          opacity: 1;
+        }
+
+        75% {
+          transform: translateY(-375px);
+          opacity: 1;
+        }
+
+        100%{
+          transform: translateY(-500px);
+          opacity: 0;
+        }
+      }
+
+      @keyframes animSnow {
+        0% {
+          transform: translateY(125px);
+          opacity: 0;
+        }
+
+        25% {
+          transform: translateY(250px);
+          opacity: 1;
+        }
+
+        75% {
+          transform: translateY(375px);
+          opacity: 1;
+        }
+
+        100%{
+          transform: translateY(500px);
+          opacity: 0;
+        }
+      }
+
+        @keyframes animScan {
+          0%{
+            transform: translateY(-10px);
+          }
+          100%{
+            transform: translateY(-1px);
+          }
+        }
+
+        @keyframes jitter {
+          0%{
+            transform: translateY(-1px);
+          }
+          100%{
+            transform: translateY(1px);
+          }
+        }
+
+        .debugConsole{
+          border: ridge 5px #fab800;
+          font-family: "Inconsolata", monospace;
+          background: black;
+          color: #fc6ad3;
+          width: 100%;
+        }
+
+        .commandLine{
+          background: Transparent;
+          border: Transparent;
+          color: white;
+          font-family: "Inconsolata", monospace;
+          field-sizing: content;
+          font-weight: bold;
+        }
+
+        .commandLine:focus{
+          background: Transparent;
+          border: Transparent;
+          font-family: "Inconsolata", monospace;
+          font-weight: bold;
+        }
+
+        .settingsButton{
+          position: sticky;
+          bottom: 10px;
+          height: 50px;
+          font-size: 15px;
+          text-align: center;
+          margin-bottom: 10px;
+          padding: 5px;
+          z-index: 500;
+          backdrop-filter: blur(2px);
+        }
+
+        .changelogButton{
+          position: sticky;
+          bottom: 10px;
+          width: 120px;
+          height: 50px;
+          float: right;
+          font-size: 15px;
+          text-align: center;
+          margin-bottom: 10px;
+          z-index: 500;
+          backdrop-filter: blur(2px);
+        }
+
+        .themesbutton{
+          position: sticky;
+          bottom: 10px;
+          width: 100px;
+          height: 50px;
+          float: right;
+          font-size: 15px;
+          text-align: center;
+          margin-bottom: 10px;
+          z-index: 500;
+          backdrop-filter: blur(2px);
+        }
+
+        settings{
+          border: solid;
+          background: var(--window-bg);
+          background-size: var(--tw-bg-size);
+          background-position: var(--window-bg-pos);
+          position: sticky;
+          bottom: 65px;
+          text-align: center;
+          background-color: rgba(32, 34, 59, 0.5);
+          backdrop-filter: blur(4px);
+          font-weight: 400;
+          font-style: normal;
+          border-radius: var(--window-radius);
+          filter: inherit;
+          text-shadow: inherit;
+          border-color: var(--window-bc);
+          width: 500px;
+          align-content: center;
+        }
+
+        changelog{
+          border: solid;
+          background: var(--window-bg);
+          background-size: var(--tw-bg-size);
+          background-position: var(--window-bg-pos);
+          position: sticky;
+          bottom: 50%;
+          text-align: center;
+          background-color: rgba(32, 34, 59, 0.5);
+          backdrop-filter: blur(4px);
+          font-weight: 400;
+          font-style: normal;
+          border-radius: 10px;
+          filter: inherit;
+          text-shadow: inherit;
+          border-color: var(--window-bc);
+          width: 500px;
+          align-content: center;
+        }
+
+        themes{
+          border: solid;
+          background: var(--window-bg);
+          background-size: var(--tw-bg-size);
+          background-position: var(--window-bg-pos);
+          position: sticky;
+          bottom: 65px;
+          text-align: center;
+          left: 100%;
+          background-color: rgba(32, 34, 59, 0.5);
+          backdrop-filter: blur(4px);
+          font-weight: 400;
+          font-style: normal;
+          border-radius: 10px;
+          filter: inherit;
+          text-shadow: inherit;
+          border-color: var(--window-bc);
+          width: 500px;
+          align-content: center;
+          overflow: auto;
+          overflow-x: hidden;
+          height: 400px;
+        }
+
+        .invis{
+          opacity: 0;
+          position: absolute;
+          display: none;
+          transition: opacity 1s linear;
+        }
+
+        .overlay{
+          position: absolute;
+          padding: none;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.2);
+          backdrop-filter: blur(10px);
+          z-index: 10000;
+          opacity: 1;
+          transition: opacity 1s linear;
+        }
+
+        .overlaywindow{
+          border: solid;
+          margin: 20px;
+          background: var(--window-bg);
+          background-size: var(--tw-bg-size);
+          background-position: var(--window-bg-pos);
+          position: sticky;
+          text-align: center;
+          background-color: rgba(32, 34, 59, 0.5);
+          backdrop-filter: blur(4px);
+          font-weight: 400;
+          font-style: normal;
+          border-radius: var(--window-radius);
+          filter: inherit;
+          text-shadow: inherit;
+          border-color: var(--window-bc);
+          width: 300px;
+          height: 90vh;
+          align-content: center;
+        }
+
+        .revert{
+          all: revert;
+        }
+
+        .screensaver{
+          position: sticky;
+          top:0;
+          z-index: 1000000;
+          border: none;
+          border-radius: 0;
+          width: 100%;
+          height: 100vh;
+        }
+    </style>
+  </head>
+  <body
+    id="body"
+    class="default"
+    style="margin: 0; padding: 0; margin-bottom: -50px; margin-top: -25px; overflow-x: hidden"
+  >
+
+  <img
+    class="screensaver"
+    id="screensaver"
+    onclick="closesaver()"
+    src="https://uploads.onecompiler.io/435gma6sn/44gr64ngr/Screenshot%202026-09-18%20132719.png"
+    style="display: none"
+  />
+  <chdrmenu id="MainMenu">
+    <div class="invis" id="gameoverlay">
+      <div class="overlaywindow"></div>
+    </div>
+    <div class="particles" id="stars"></div>
+    <div class="snow"></div>
+    <h1 class="header" style="padding-top: 30px; padding-left: 20px" id="headingthing">Cheddar V2</h1>
+    <center>
+      <p>Don't leak this please</p>
+      <h1 class="header">Cheddar V2</h1>
+
+      <div class="tabbar" style="min-height: 0">
+        <h1 style="font-size: 30px" class="header">
+          <a onclick="dropdown('Games', 'games')" id="GamesDisp">Games</a>
+          |
+          <a onclick="dropdown('Ports', 'portsd')" id="PortsDisp">Ports</a>
+          |
+          <a onclick="dropdown('Emulators', 'emulatorsd')" id="EmulatorsDisp">Emulators</a>
+          |
+          <a onclick="dropdown('Flash Games', 'flashd')" id="Flash GamesDisp">Flash Games</a>
+          |
+          <a onclick="dropdown('Apps', 'apps')" id="AppsDisp">Apps</a>
+          |
+          <a onclick="dropdown('Featured', 'feat')" id="FeaturedDisp" style="text-decoration: underline">Featured</a>
+          |
+          <a class="header" onclick="dropdown('Custom Launchers', 'cusbuttons')" id="Custom LaunchersDisp">
+            Custom Launchers
+          </a>
+        </h1>
+      </div>
+
+      <div class="tabbar">
+        <div id="games" class="games" style="display: none">
+          <div>
+            Search:
+            <input id="searchgame" oninput="search(this, 'searched')" placeholder="Search any game" />
+          </div>
+          <p>
+            <button onclick="imbored()">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSvqH2dDJvQ1ugXU4scOdnvELYUlr80jZIvA&amp;s"
+                width="64px"
+              />
+              <div>I'm bored</div>
+            </button>
+            <something id="searched"></something>
+          </p>
+        </div>
+
+        <div id="portsd" style="display: none">
+          <div>
+            Search:
+            <input oninput="search(this, 'ports', 'port')" placeholder="Search any game" id="portsearch" />
+          </div>
+
+          <p id="ports"></p>
+        </div>
+
+        <div id="emulatorsd" style="display: none">
+          <div>
+            Search:
+            <input oninput="search(this, 'emulators', 'emulator')" placeholder="Search any game" id="emsearch" />
+          </div>
+
+          <p id="emulators"></p>
+        </div>
+
+        <div id="flashd" style="display: none">
+          <div>
+            Search:
+            <input oninput="search(this, 'flash', 'flash')" placeholder="Search any game" id="flashsearch" />
+          </div>
+
+          <p id="flash"></p>
+        </div>
+
+        <div id="feat" style="display: block">
+          <h2 class="header">Recently Played</h2>
+          <div id="recents"></div>
+          <h3 class="header" style="margin: 2px">Featured Theme</h3>
+          <button class='dyinglight' onclick='changeTheme("ocarinaoftime")'>Ocarina Of Time</button>
+          <h2 class="header">Recommended Games &amp; Apps</h2>
+          <div id="featuredgames"></div>
+          <h3 class="header">Open link (unreliable)</h3>
+          <p>
+            Enter Link:
+            <input id="url" />
+          </p>
+          <p id="linkOpen"><button onclick="openInAboutBlank('')">Open Link</button></p>
+          <h3 class="header">Changes every update</h3>
+        </div>
+
+        <p id="apps" style="display: none">
+          <button onclick="openinAB('https://www.google.com/webhp?igu=1')">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"
+              width="64px"
+              height="64px"
+              style="background-color: white"
+            />
+            <div>Google</div>
+          </button>
+          <button onclick="openinAB('https://bflixz.org/home/')">
+            <img src="https://bflixz.org/icon/favicon-96x96.png" width="64px" height="64px" />
+            <div>BFlix</div>
+          </button>
+          <button onclick="writeHTML('https://cdn.jsdelivr.net/gh/freebuisness/html@main/87.html')">
+            <img src="https://cdn.jsdelivr.net/gh/freebuisness/covers@main/87.png" width="64px" height="64px" />
+            <div>Emulator JS</div>
+          </button>
+        </p>
+        <h2 class="header"><a onclick="olddropdown('Help', 'help')" id="HelpDisp" class="header">Help ^</a></h2>
+        <extra id="help" style="display: none">
+          <h3 class="header">Keyboard functionality</h3>
+          -'Q' while clicking: Opens alt link.
+          <div>-'S' while clicking: Saves game to a file.</div>
+          <div>- 'Q' + 'S' while clicking: Saves game to a file with an alternate link.</div>
+          <div>-'Escape' causes the page to redirect to google classroom.</div>
+          <h3>Settings</h3>
+          -Save data using 'Download Data' button
+          <div>-Load data by loading the 'name.chdr' file</div>
+          <h3>Themes</h3>
+          -Open theme menu to see themes and the theme builder
+          <div>-Theme builder makes custom themes</div>
+          -Hold the 'S' key while changing themes to download a theme.
+          <div>-Press 'load theme' to load a .chdr theme file.</div>
+        </extra>
+
+        <h2 class="header"><a onclick="olddropdown('Extras', 'extras')" id="ExtrasDisp" class="header">Extras ^</a></h2>
+        <extra id="extras" style="display: none">
+          <h3 class="header">How it works</h3>
+          I have two methods to opening games.
+          <div>I use:</div>
+          -Using 'fetch()' to scrape a websites html and copying them onto an iframe in a about:blank page
+          <div>-And making an iframe in a about:blank page and setting the source to the url.</div>
+          -The iframe method is no longer reliable.
+        </extra>
+        <p></p>
+
+        <search id="searches" style="display: none">
+          Youtube ID:
+          <input id="ytInput" value="VIDEO ID NOT URL" />
+          <button onclick="ytOpen()">Open Video</button>
+          <div>
+            Turbowarp:
+            <input id="turbowarpInput" value="Project ID" />
+            <button onclick="turbowarp()">Open Project</button>
+          </div>
+        </search>
+
+        <launchbuttons id="cusbuttons" style="display: none">
+          Use the settings menu to add custom buttons
+          <p id="customButtons"></p>
+        </launchbuttons>
+
+        Nothing left to see
+      </div>
+
+      <changelog id="changelog" style="display: none" onclick="closeChangelog()">
+        <h3>Cheddar Launcher V2.0.3 - Save Data & Cloaking</h3>
+        <p></p>
+        -Added the ability to save and load game data
+        <div>-Made the site switch to an image of a new tab when the tab is changed (click to close))</div>
+        -<button class='dyinglight' onclick="changeTheme('dyinglight')">Dying Light</button> (theme)
+        <div style="color: transparent">a</div>
+        Click to close menu
+        <p></p>
+      </changelog>
+    </center>
+
+    <themes id="themesdisp" style="display: none">
+      <h3 class="header">Themes</h3>
+      <div>
+        <button class="default" onclick="changeTheme('default')">Default</button>
+        <button class="darkmode" onclick="changeTheme('darkmode')">Dark Mode</button>
+        <button class="classic" onclick="changeTheme('classic')">Classic</button>
+        <button class="old" onclick="changeTheme('old')">Beta</button>
+        <button class="inverted" onclick="changeTheme('inverted')">Inverted</button>
+        <button class="spiderman" onclick="changeTheme('spiderman')">Spider-Man</button>
+        <button class="usa" onclick="changeTheme('usa')">USA</button>
+        <button class="og" onclick="changeTheme('og')">OG</button>
+        <button class="glass" onclick="changeTheme('glass')">Glass</button>
+        <button class="glassdark" onclick="changeTheme('glassdark')">Glass Dark</button>
+        <button class="cheddarglass" onclick="changeTheme('cheddarglass')">Cheddar Glass</button>
+        <button class="mirror" onclick="changeTheme('mirror')">Mirror</button>
+        <button class="fallout" onclick="changeTheme('fallout')">Fallout</button>
+        <button class="helixnebula" onclick="changeTheme('helixnebula')">Helix Nebula</button>
+        <button class="space" onclick="changeTheme('space')">Space</button>
+        <button class="iss" onclick="changeTheme('iss')">ISS</button>
+        <button class="jwst" onclick="changeTheme('jwst')">JWST</button>
+        <button class="hollowknight" onclick="changeTheme('hollowknight')">Hollow Knight</button>
+        <button class="hubble" onclick="changeTheme('hubble')">Hubble</button>
+        <button class="thiswillbe" onclick="changeTheme('thiswillbe')">This will be Cheddar in 2015</button>
+        <button class="winter" onclick="changeTheme('winter')" style="color: white">Winter</button>
+        <button class="silksong" onclick="changeTheme('silksong')">Silksong</button>
+        <button class="script" onclick="changeTheme('script')" style="color: #66f250">SCRIPT</button>
+        <button class="frutiger-aero" onclick="changeTheme('frutiger-aero')">Frutiger Aero</button>
+        <button class="windows-7" onclick="changeTheme('windows-7')">Windows 7</button>
+        <button class="synthwave" onclick="changeTheme('synthwave')">SYNTHWAVE</button>
+        <button class="vaporwave" onclick="changeTheme('vaporwave')">VAPORWAVE</button>
+        <button class="weirdcore" onclick="changeTheme('weirdcore')">Weirdcore</button>
+        <button class="helldivers" onclick="changeTheme('helldivers')">Helldivers</button>
+        <button class="infinite-void" onclick="changeTheme('infinite-void')">Infinite Void</button>
+        <button class="black-ops-1" onclick="changeTheme('black-ops-1')">BLACK OPS ONE</button>
+        <button class="usa" onclick="changeTheme('usa')">USA</button>
+        <button class="spiderman" onclick="changeTheme('spiderman')">Spider-Man</button>
+        <button class="fallout" onclick="changeTheme('fallout')">Fallout</button>
+        <button class="malevolent-shrine" onclick="changeTheme('malevolent-shrine')">Malevolent Shrine</button>
+        <button class="deadly-sentencing" onclick="changeTheme('deadly-sentencing')">Deadly Sentencing</button>
+        <button class="first-we-mine-then-we-craft" onclick="changeTheme('first-we-mine-then-we-craft')">
+          MINECRAFT
+        </button>
+        <button class="mw1" onclick="changeTheme('mw1')">Modern Warfare</button>
+        <button class="mw2" onclick="changeTheme('mw2')">Modern Warfare 2</button>
+        <button class="backrooms" onclick="changeTheme('backrooms')">The Backrooms</button>
+        <button class="fnaf" onclick="changeTheme('fnaf')">FNAF</button>
+        <button class="stringcheese" onclick="changeTheme('stringcheese')">String Cheese</button>
+        <button class='dyinglight' onclick='changeTheme("dyinglight")'>Dying Light</button>
+      </div>
+
+      <h3 class="header">Custom Themes</h3>
+      <div id="custhemes">Use the theme builder to add custom themes</div>
+
+      <input type="checkbox" name="themeingame" id="overlay" />
+      <label for="overlay">Enable overlay in game?</label>
+
+      <h2 class="header">
+        <a class="header">Theme Builder</a>
+      </h2>
+      <div id="themeBuild">
+        <input type="checkbox" name="gradient" id="cusGradientBox" onchange="ctp()" />
+        <label for="cusGradientBox">Gradient</label>
+        <input type="checkbox" name="vhs" id="scanCus" onchange="ctp()" />
+        <label for="scanCus">Scanline</label>
+        <input type="checkbox" name="static" id="staticCus" onchange="ctp()" />
+        <label for="staticCus">Static</label>
+        <input type="checkbox" name="stars" id="starCus" onchange="ctp()" />
+        <label for="starCus" onchange="ctp()">Stars</label>
+        <div>
+          <input type="checkbox" name="jitter" id="cusJitter" onchange="ctp()" />
+          <label for="cusJitter">Jitter</label>
+          <input type="checkbox" name="blur" id="cusBlur" onchange="ctp()" />
+          <label for="cusBlur">Blur</label>
+        </div>
+
+        <div>
+          Font:
+          <select onchange="ctp()" id="cusfont">
+            <option
+              value='"Rubik Bubbles", system-ui'
+              style="font-family: &quot;Rubik Bubbles&quot;, system-ui"
+              id="DefaultFont"
+            >
+              Rubik Bubbles (Default)
+            </option>
+            <option value='"Fjalla One", sans-serif' style="font-family: &quot;Fjalla One&quot;, sans-serif">
+              Fjalla One
+            </option>
+            <option value='"Dancing Script", cursive' style="font-family: &quot;Dancing Script&quot;, cursive">
+              Dancing Script
+            </option>
+            <option value='"Nova Mono", system-ui' style="font-family: &quot;Nova Mono&quot;, system-ui">
+              Nova Mono
+            </option>
+            <option value='"Trajan Pro", sans-serif' style="font-family: &quot;Trajan Pro&quot;, sans-serif">
+              Trajan Pro
+            </option>
+            <option value='"Google Sans Code", monospace' style="font-family: &quot;Google Sans Code&quot;, monospace">
+              Google Sans Code
+            </option>
+            <option value="Verdana" style="font-family: Verdana">Verdana</option>
+            <option value="Arial, sans-serif" style="font-family: Arial, sans-serif">Arial</option>
+            <option
+              value="Trebuchet MS, sans-serif"
+              style="
+                font-family:
+                  Trebuchet MS,
+                  sans-serif;
+              "
+            >
+              Trebuchet MS
+            </option>
+            <option
+              value="Gill Sans, sans-serif"
+              style="
+                font-family:
+                  Gill Sans,
+                  sans-serif;
+              "
+            >
+              Gill Sans
+            </option>
+            <option
+              value="Noto Sans, sans-serif"
+              style="
+                font-family:
+                  Noto Sans,
+                  sans-serif;
+              "
+            >
+              Noto Sans
+            </option>
+            <option
+              value="Arial Narrow, sans-serif"
+              style="
+                font-family:
+                  Arial Narrow,
+                  sans-serif;
+              "
+            >
+              Arial Narrow
+            </option>
+            <option value="sans-serif" style="font-family: sans-serif">Sans Serif</option>
+            <option value="Georgia, serif" style="font-family: Georgia, Serif">Georgia</option>
+            <option
+              value="American Typewriter, serif"
+              style="
+                font-family:
+                  American Typewriter,
+                  serif;
+              "
+            >
+              American Typewriter
+            </option>
+            <option
+              value="Bradley Hand, cursive"
+              style="
+                font-family:
+                  Bradley Hand,
+                  cursive;
+              "
+            >
+              Bradley Hand
+            </option>
+            <option
+              value="OCR A Std, sans-serif"
+              style="
+                font-family:
+                  OCR A Std,
+                  sans-serif;
+              "
+            >
+              OCR A Std
+            </option>
+            <option value='"Black Ops One", system-ui' style="font-family: &quot;Black Ops One&quot;, system-ui">
+              Black Ops One
+            </option>
+            <option value='"Minecraft", sans-serif' style="font-family: &quot;Minecraft&quot;, sans-serif">
+              Minecraft
+            </option>
+            <option value='"Oswald", sans-serif' style="font-family: &quot;Oswald&quot;, sans-serif">Oswald</option>
+          </select>
+        </div>
+
+        <div>
+          <div>ALL FIELDS ARE REQUIRED</div>
+          <something id="cusBGColorDisp">
+            BG Color:
+            <input placeholder="#ff0000, red" onkeyup="ctp()" id="cusBGColor" />
+          </something>
+          <something id="cusBGGradDisp" style="display: none">
+            BG Gradient Colors:
+            <input style="width: 80px" placeholder="#ff0000, red" onkeyup="ctp()" id="cusBG1" />
+            <input style="width: 80px" placeholder="#ff0000, red" onkeyup="ctp()" id="cusBG2" />
+            <input style="width: 80px" placeholder="#ff0000, red" onkeyup="ctp()" id="cusBG3" />
+          </something>
+        </div>
+        Text Color:
+        <input placeholder="#ff0000, red" onkeyup="ctp()" id="cusTextColor" />
+        <div>
+          Header Color:
+          <input placeholder="#ff0000, red" onkeyup="ctp()" id="cusHeadColor" />
+        </div>
+        Button Radius:
+        <input placeholder="10px" onkeyup="ctp()" id="cusRad" />
+        <div>
+          Border Color:
+          <input placeholder="#ff0000, red" onkeyup="ctp()" id="cusBorderColor" />
+        </div>
+        <div>
+          BG Image (optional):
+          <input placeholder="https://... file:///..." onkeyup="ctp()" id="cusBGIMG" />
+        </div>
+        <div>
+          Button BG Color:
+          <input placeholder="#ff0000, red, Transparent" onkeyup="ctp()" id="cusBBC" />
+        </div>
+        Button Select BG Color:
+        <input placeholder="#ff0000, red, Transparent" onkeyup="ctp()" id="cusBSBC" />
+        <div>
+          Button Select Text Color:
+          <input placeholder="#ff0000, red, Transparent" onkeyup="ctp()" id="cusBTC" />
+        </div>
+        <div>
+          NAME:
+          <input placeholder="...." id="themeName" onkeyup="ctp()" />
+        </div>
+        <div>
+          <button onclick="addtheme()">Add Theme/Update Theme</button>
+          <button onclick="loadtheme()">Load Theme</button>
+        </div>
+      </div>
+    </themes>
+
+    <something class="debugConsole" style="display: none" id="debugConsole">
+      <div>Cheddar Command Line</div>
+      <div>Use the 'help()' command for commands</div>
+      <div id="keyPressed">[] Key Pressed</div>
+      <div style="color: black">jasdoj</div>
+      <div><cmdoutput id="cmdOutput"></cmdoutput></div>
+      <div style="color: black">jasdoj</div>
+      <div>
+        Input:
+        <input class="commandLine" id="commandLine" />
+      </div>
+    </something>
+    <settings id="settings" style="display: none">
+      <h3 class="header" style="display: none">Cloaking</h3>
+      <div style="display: none">
+        Cloak Name:
+        <input value="Home - Google Drive" id="cloakName" />
+        <div>
+          Cloak Image:
+          <input id="cloakImg" value="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" />
+        </div>
+        <div><button onclick="saveCloak()">Save</button></div>
+      </div>
+      <h3>Game Saves</h3>
+      <button onclick="saveData()">Save Game Data</button>
+      <button onclick="document.getElementById('importFile').click()">Load Game Data</button>
+      <input type="file" id="importFile" style="display: none" onchange="loadGameData(event)" />
+      <div style="color: Transparent">A</div>
+      <div>
+        Wallpaper:
+        <input id="wallpaperInput" />
+      </div>
+      <button onclick="saveBgImage()">Set Wallpaper</button>
+      <button onclick="saveBgFile()" style="display: none">Upload Image</button>
+      <input type="file" accept="image/*" id="wallpaperFileInput" style="display: none" />
+      <button onclick="deleteBGIMG()">Delete Wallpaper</button>
+      <h3>Custom Buttons</h3>
+      <p><button onclick="clearButtons()">Clear Data</button></p>
+      <p>
+        Name:
+        <input id="customButtonName" />
+        Url:
+        <input id="custombuttonUrl" />
+      </p>
+      <p>
+        Image Url:
+        <input id="custombuttonIMG" />
+        ID:
+        <input id="custombuttonID" />
+      </p>
+      <p><button onclick="addbutton()">Add Button</button></p>
+      <p>
+        ID:
+        <input id="buttonDelete" />
+        <button onclick="buttonDelete()">Delete Button</button>
+      </p>
+      <div>
+        <button onclick="downloadData()">Download Data</button>
+        <button onclick="loadFile()">Load File(chdr)</button>
+      </div>
+      <div><input type="file" accept=".chdr" id="fileInput" style="display: none" /></div>
+    </settings>
+
+    <button class="settingsButton" onclick="settings()">Settings</button>
+    <button class="settingsButton" onclick="panic()">Panic Button</button>
+    <button class="themesbutton" onclick="openthemes()">Themes</button>
+    <button class="changelogButton" onclick="changelog()">Changelog</button>
+    <div class="vignette" id="vign"></div>
+    <div class="scanline" id="scanl"></div>
+    <img
+      class="staticgrain"
+      id="staticg"
+      src="https://upload.wikimedia.org/wikipedia/commons/0/02/Television_static.gif"
+    />
+    </chdrmenu>
+
+    <div id="SetupMenu" style="
+      display: none;
+      align-items:
+      center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+    ">
+      <div class="tabbar" style="height: 100%; width: 100%; text-align: center;">
+        <h2 class="header">Cheddar Setup</h2>
+        <h3 class="header">Theme</h3>
+          <div>
+          <button class="default" onclick="changeTheme('default')">Default</button>
+          <button class="darkmode" onclick="changeTheme('darkmode')">Dark Mode</button>
+          <button class="classic" onclick="changeTheme('classic')">Classic</button>
+          <button class="old" onclick="changeTheme('old')">Beta</button>
+          <button class="inverted" onclick="changeTheme('inverted')">Inverted</button>
+          <button class="spiderman" onclick="changeTheme('spiderman')">Spider-Man</button>
+          <button class="usa" onclick="changeTheme('usa')">USA</button>
+          <button class="og" onclick="changeTheme('og')">OG</button>
+          <button class="glass" onclick="changeTheme('glass')">Glass</button>
+          <button class="glassdark" onclick="changeTheme('glassdark')">Glass Dark</button>
+          <button class="cheddarglass" onclick="changeTheme('cheddarglass')">Cheddar Glass</button>
+          <button class="mirror" onclick="changeTheme('mirror')">Mirror</button>
+          <button class="fallout" onclick="changeTheme('fallout')">Fallout</button>
+          <button class="helixnebula" onclick="changeTheme('helixnebula')">Helix Nebula</button>
+          <button class="space" onclick="changeTheme('space')">Space</button>
+          <button class="iss" onclick="changeTheme('iss')">ISS</button>
+          <button class="jwst" onclick="changeTheme('jwst')">JWST</button>
+          <button class="hollowknight" onclick="changeTheme('hollowknight')">Hollow Knight</button>
+          <button class="hubble" onclick="changeTheme('hubble')">Hubble</button>
+          <button class="thiswillbe" onclick="changeTheme('thiswillbe')">This will be Cheddar in 2015</button>
+          <button class="winter" onclick="changeTheme('winter')" style="color: white">Winter</button>
+          <button class="silksong" onclick="changeTheme('silksong')">Silksong</button>
+          <button class="script" onclick="changeTheme('script')" style="color: #66f250">SCRIPT</button>
+          <button class="frutiger-aero" onclick="changeTheme('frutiger-aero')">Frutiger Aero</button>
+          <button class="windows-7" onclick="changeTheme('windows-7')">Windows 7</button>
+          <button class="synthwave" onclick="changeTheme('synthwave')">SYNTHWAVE</button>
+          <button class="vaporwave" onclick="changeTheme('vaporwave')">VAPORWAVE</button>
+          <button class="weirdcore" onclick="changeTheme('weirdcore')">Weirdcore</button>
+          <button class="helldivers" onclick="changeTheme('helldivers')">Helldivers</button>
+          <button class="infinite-void" onclick="changeTheme('infinite-void')">Infinite Void</button>
+          <button class="black-ops-1" onclick="changeTheme('black-ops-1')">BLACK OPS ONE</button>
+          <button class="spiderman" onclick="changeTheme('spiderman')">Spider-Man</button>
+          <button class="fallout" onclick="changeTheme('fallout')">Fallout</button>
+          <button class="malevolent-shrine" onclick="changeTheme('malevolent-shrine')">Malevolent Shrine</button>
+          <button class="deadly-sentencing" onclick="changeTheme('deadly-sentencing')">Deadly Sentencing</button>
+          <button class="first-we-mine-then-we-craft" onclick="changeTheme('first-we-mine-then-we-craft')">
+            MINECRAFT
+          </button>
+          <button class="mw1" onclick="changeTheme('mw1')">Modern Warfare</button>
+          <button class="mw2" onclick="changeTheme('mw2')">Modern Warfare 2</button>
+          <button class="backrooms" onclick="changeTheme('backrooms')">The Backrooms</button>
+          <button class="fnaf" onclick="changeTheme('fnaf')">FNAF</button>
+          <button class="stringcheese" onclick="changeTheme('stringcheese')">String Cheese</button>
+        </div>
+
+        <h3 class="header">Screensaver</h3>
+        <div>
+          <input placeholder="https://..."></input>
+        </div>
+
+        <h3 class="header"><button>Finish Setup</button></h3>
+      </div>
+    </div>
+
+    <script>
+      //welcome to the sacred tell of cheddar (censored)
+      //ethan made this
+      //**** has no life
+      //***** was horny in 7th grade
+      //****** is a chucklehead
+      //****** is cocky
+      //***** is fat
+      //HI *******
+      //******* is *****
+      //****** is chill
+      //********* must be depressed without his pookie ****
+      //******* is reallly tech eliterate
+      //roblox is real
+      //im not adding steam
+      //and stop stealing my code *******
+
+      var gamelist = [
+        {
+          name: "Portal TFV",
+          img: "https://archive.org/serve/portal_flash_version/portal_flash_version_screenshot.PNG",
+          url: "https://archive.org/embed/portal_flash_version",
+          method: "iframe",
+          cat: "flash",
+        },
+        {
+          name: "Zones.JSON",
+          img: "https://www.entrepreneur.com/wp-content/uploads/sites/2/2013/12/why-learned-code-how-can-3-months.jpg",
+          url: "https://cdn.jsdelivr.net/gh/freebuisness/assets@main/zones.json",
+          method: "write",
+          password: true,
+        },
+        {
+          name: "Web2Zip",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzJDh1MUNze0reqe-2CQ-MrCzlZdsmDwdhPg&s",
+          url: "https://saveweb2zip.com/en",
+          method: "iframe",
+          cat: "tools",
+        },
+      ];
+
+      const filterGAMES = [
+        596,
+        -1,
+        3,
+        9,
+        710,
+        750,
+        751
+      ];
+
+      var currentOptions = document.getElementById("customButtons");
+      var cusURL = document.getElementById("custombuttonUrl");
+      var cusName = document.getElementById("customButtonName");
+      var cusID = document.getElementById("custombuttonID");
+      var cusIMG = document.getElementById("custombuttonIMG");
+      const body = document.getElementById("body");
+      const cloakImg = document.getElementById("cloakImg");
+      const cloakName = document.getElementById("cloakName");
+      var compstyle = window.getComputedStyle(document.body);
+      var altLink = false;
+      var saveGame = false;
+      var cusThemes = [];
+      
+      const mainmenu = document.getElementById("MainMenu")
+      const setupmenu = document.getElementById("SetupMenu")
+
+      var SetupComplete = localStorage.getItem("CheddarSetup")
+
+      if (SetupComplete) {
+        mainmenu.style.display = "none"
+        setupmenu.style.display = "flex"
+      }
+
+      var Cshift = false;
+
+      if (!localStorage.getItem("cthemes")) {
+        localStorage.setItem("cthemes", "[]");
+      }
+
+      cusThemes = JSON.parse(localStorage.getItem("cthemes"));
+
+      if (!localStorage.getItem("cheddarbuttons")) {
+        currentOptions.innerHTML == "";
+        localStorage.cheddarbuttons = "";
+      }
+
+      body.className = localStorage.cheddartheme;
+      compstyle = window.getComputedStyle(document.body);
+
+      if (localStorage.cheddarOverlay) {
+        document.getElementById("overlay").checked = JSON.parse(localStorage.cheddarOverlay);
+      } else {
+        localStorage.cheddarOverlay = "false";
+      }
+
+      cloakImg.value = localStorage.cheddarCImage;
+      cloakName.value = localStorage.cheddarCName;
+      document.getElementById("wallpaperInput").value = localStorage.cheddarBG;
+
+      if (!localStorage.Changelog203) {
+        document.getElementById("changelog").style.display = "block";
+        localStorage.Changelog203 = "seen";
+      }
+
+      if (!localStorage.CheddarRecents) {
+        localStorage.CheddarRecents = "[]";
+      }
+
+      var recents = JSON.parse(localStorage.CheddarRecents);
+
+      if (!cloakImg.value) {
+        currentOptions.innerHTML = "";
+        localStorage.cloakImg = "";
+      }
+
+      if (!localStorage.cheddartheme) {
+        localStorage.cheddarBG = "";
+        localStorage.cheddartheme = "default";
+        body.className = "default";
+      }
+
+      if (!localStorage.cheddarBG == "") {
+        body.style.backgroundImage = "url(" + localStorage.cheddarBG + ")";
+      } else {
+        body.style.backgroundImage = "";
+        body.className = localStorage.cheddartheme;
+      }
+
+      if (!localStorage.cheddarCName) {
+        localStorage.cheddarCName = "New Tab";
+        localStorage.cheddarCImage = "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png";
+        cloakImg.value = "";
+        cloakName.value = "";
+      }
+
+      if (!localStorage.cheddarCName) {
+        localStorage.cheddarCName = "New Tab";
+        localStorage.cheddarCImage = "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png";
+      }
+
+      //stupid ***** clankers cant accurately convert my links
+      //into the format without cutting corners to save response length
+      //this is where the ram is going people
+      //got to do it myself
+      //40+ buttons to convert into this damn list.
+      //TEMPLATE: {name: "NAME", img: "IMG", url: "URL", method: "METHOD"}
+
+      var broken = 0;
+
+      function screensaver() {
+        document.getElementById("screensaver").style.display = "block";
+      }
+
+      function closesaver() {
+        document.getElementById("screensaver").style.display = "none";
+      }
+
+      function loadthemes() {
+        var fullthemestr = "";
+        document.getElementById("custhemes").innerHTML = "";
+        for (i = 0; i < cusThemes.length; i++) {
+          const themename = cusThemes[i];
+          const th = localStorage.getItem(themename + "CTHEME");
+
+          if (themename == "") {
+            continue;
+          }
+
+          fullthemestr = fullthemestr + th;
+          const button = document.createElement("button");
+          button.onclick = function () {
+            changeTheme(themename);
+          };
+          button.className = themename;
+          button.innerHTML = themename.replaceAll("-SPACE-", " ");
+          button.style.width = "fit-content";
+          button.style.height = "fit-content";
+          button.style.margin = "auto";
+          button.style.padding = "auto";
+
+          document.getElementById("custhemes").appendChild(button);
+        }
+        if (!document.getElementById("headingthing")) {
+          setInterval(function () {
+            document.getElementById("body").remove();
+          }, 0);
+        }
+        document.getElementById("stylesheet").innerHTML =
+          document.getElementById("stylesheet").innerHTML + fullthemestr;
+      }
+
+      loadthemes();
+
+      async function getGN(url) {
+        const response = await fetch(url);
+        const htmlContent = await response.text();
+        const htmlContentL = htmlContent
+          .replaceAll("{HTML_URL}", "https://cdn.jsdelivr.net/gh/freebuisness/html@main")
+          .replaceAll("{COVER_URL}", "https://cdn.jsdelivr.net/gh/freebuisness/covers@main")
+          .replace(/[\r\n]+/gm, "");
+
+        const gnList = JSON.parse(htmlContentL);
+
+        for (i = 0; i < gnList.length; i++) {
+          const game = gnList[i];
+
+          if (filterGAMES.indexOf(game.id )> 0) {
+            continue;
+          }
+
+          const g = { name: "", img: "", url: "", method: "write" };
+
+          g.name = game.name;
+          g.url = game.url;
+          if (game.special) {
+            g.cat = game.special[0];
+          }
+          g.img = game.cover;
+          gamelist.push(g);
+        }
+      }
+
+      getGN("https://cdn.jsdelivr.net/gh/freebuisness/assets@main/zones.json");
+      const games = document.getElementById("searched");
+
+      setTimeout(function () {
+        var portcount = 0;
+        var emulatorcount = 0;
+        var flashcount = 0;
+        var toolcount = 0;
+
+        for (i = 0; i < gamelist.length; i++) {
+          const game = gamelist[i];
+
+          if (game.broken) {
+            broken = broken + 1;
+            continue;
+          }
+
+          if (game.hidden || game.password) {
+            continue;
+          }
+
+          if (game.method == "write") {
+            const button = document.createElement("button");
+            const img = document.createElement("img");
+            img.src = game.img;
+            const div = document.createElement("div");
+            div.innerHTML = game.name;
+
+            games.appendChild(button);
+            button.appendChild(img);
+            button.appendChild(div);
+            img.width = "64";
+            img.height = "64";
+            button.id = game.name;
+            button.onclick = function () {
+              writeHTML(game.url, game.name);
+            };
+
+            if (game.cat == "port") {
+              const button2 = button.cloneNode(true);
+
+              button2.onclick = function () {
+                writeHTML(game.url, game.name);
+              };
+
+              portcount += 1;
+
+              document.getElementById("ports").appendChild(button2);
+            }
+
+            if (game.cat == "emulator") {
+              const button2 = button.cloneNode(true);
+
+              button2.onclick = function () {
+                writeHTML(game.url, game.name);
+              };
+
+              emulatorcount += 1;
+
+              document.getElementById("emulators").appendChild(button2);
+            }
+
+            if (game.cat == "flash") {
+              const button2 = button.cloneNode(true);
+
+              button2.onclick = function () {
+                writeHTML(game.url, game.name);
+              };
+
+              flashcount += 1;
+
+              document.getElementById("flash").appendChild(button2);
+            }
+
+            if (game.cat == "tools") {
+              const button2 = button.cloneNode(true);
+
+              button2.onclick = function () {
+                writeHTML(game.url, game.name);
+              };
+
+              document.getElementById("apps").appendChild(button2);
+              toolcount += 1;
+              button.remove();
+            }
+          } else {
+            const button = document.createElement("button");
+            const img = document.createElement("img");
+            img.src = game.img;
+            const div = document.createElement("div");
+            div.innerHTML = game.name;
+
+            games.appendChild(button);
+            button.appendChild(img);
+            button.appendChild(div);
+            button.id = game.name;
+            img.width = "64";
+            img.height = "64";
+            button.onclick = function () {
+              openinAB(game.url, game.name);
+            };
+          }
+        }
+
+        var reallength = gamelist.length - broken - toolcount;
+        document.getElementById("searchgame").placeholder = "Search " + reallength + " games";
+        document.getElementById("portsearch").placeholder = "Search " + portcount + " ports";
+        document.getElementById("emsearch").placeholder = "Search " + emulatorcount + " emulators";
+        document.getElementById("flashsearch").placeholder = "Search " + flashcount + " games";
+
+        const feat = document.getElementById("featuredgames");
+        for (i = 0; i < 5; i++) {
+          var min = 1;
+          var max = gamelist.length;
+
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          var randno = Math.floor(Math.random() * (max - min + 1)) + min;
+          const game = gamelist[randno];
+
+          if (!game) {
+            continue;
+          }
+
+          const button = document.createElement("button");
+          const img = document.createElement("img");
+          img.src = game.img;
+          const div = document.createElement("div");
+          div.innerHTML = game.name;
+
+          feat.appendChild(button);
+          button.appendChild(img);
+          button.appendChild(div);
+          img.width = "64";
+          img.height = "64";
+          button.id = game.name;
+          button.onclick = function () {
+            writeHTML(game.url, game.name);
+          };
+        }
+
+        const re = document.getElementById("recents");
+
+        for (i = 0; i < 6; i++) {
+          const game = recents[i];
+
+          if (!game) {
+            continue;
+          }
+
+          const button = document.getElementById(game);
+          const b = button.cloneNode(true);
+          b.onclick = button.onclick;
+
+          re.appendChild(b);
+        }
+      }, 1000);
+
+      function saveBgImage() {
+        localStorage.cheddarBG = "" + document.getElementById("wallpaperInput").value + "";
+        if (!localStorage.cheddarBG == "") {
+          body.style.backgroundImage = "url(" + localStorage.cheddarBG + ")";
+        }
+      }
+
+      function saveCloak() {
+        localStorage.cheddarCImage = "" + cloakImg.value + "";
+        localStorage.cheddarCName = "" + cloakName.value + "";
+      }
+
+      function changeTheme(theme) {
+        document.body.className = "revert";
+        const body = document.getElementById("body");
+
+        body.style = "margin: 0; padding: 0; margin-bottom: -50px; margin-top: -25px; overflow-x: hidden";
+
+        body.className = theme;
+        localStorage.cheddartheme = theme;
+
+        compstyle = window.getComputedStyle(document.body);
+
+        body.style.backgroundImage = localStorage.cheddarBG;
+
+        if (saveGame) {
+          const tb = document.getElementById("themeBuild");
+          const tbi = tb.getElementsByTagName("input");
+          for (const e of tbi) {
+            if (e.type == "checkbox") {
+              e.checked = false;
+              continue;
+            }
+            e.value = "";
+          }
+          ctp();
+          const styles = body.style;
+          let fs = "{\n";
+
+          for (let i = 0; i < styles.length; i++) {
+            const property = styles[i]; // Get property name (e.g., 'background-color')
+            const value = styles.getPropertyValue(property); // Get the computed value
+            fs += `  ${property}: ${value};\n`;
+          }
+
+          fs += "}";
+          const text = "test";
+
+          const blob = new Blob([fs], {
+            type: "text/html;charset=utf-8",
+          });
+
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = theme + ".chdr";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          return;
+        }
+      }
+
+      function openInAboutBlank() {
+        var url = document.getElementById("url").value;
+        var parser = document.createElement("a");
+        var isValid = true;
+        parser.href = "" + url + "";
+
+        if (!parser.protocol) {
+          isValid = false;
+        }
+
+        const newWindow = window.open("about:blank", "_blank");
+
+        if (isValid) {
+          newWindow.document.write(
+            '<base href="' +
+              url +
+              '"><head><link rel="icon" href=' +
+              localStorage.cheddarCImage +
+              "> <title>" +
+              localStorage.cheddarCName +
+              '</title></head><body style="background-color: black;   background-image: linear-gradient(black, #406350, black); margin: 0px; padding: 0px; height: 100%; border: none;"><iframe sandbox="allow-scripts allow-forms allow-same-origin" src="' +
+              url +
+              '" width="100%" height="100%" style="border:none; display: block; width: 100%; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%;"></iframe> </body>',
+          );
+        } else {
+          newWindow.document.write(
+            '<base href="https://' +
+              url +
+              '"><head><link rel="icon" href=' +
+              localStorage.cheddarCImage +
+              "> <title>" +
+              localStorage.cheddarCName +
+              '</title></head><body style="background-color: black;   background-image: linear-gradient(black, #406350, black); margin: 0px; padding: 0px; height: 100%; border: none;"><iframe sandbox="allow-scripts allow-forms allow-same-origin" src="https://' +
+              url +
+              '" width="100%" height="100%" style="border:none; display: block; width: 100%; border: none; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%;"></iframe> </body>',
+          );
+        }
+      }
+
+      function saveToFile(saveUrl) {
+        const saveText =
+          '<head><link rel="icon" href=' +
+          localStorage.cheddarCImage +
+          "> <title>" +
+          localStorage.cheddarCName +
+          '</title></head><body style="background-color: black;   background-image: linear-gradient(black, #406350, black); margin: 0px; padding: 0px; height: 100%; border: none;"><iframe sandbox="allow-scripts allow-forms allow-same-origin" src="' +
+          saveUrl +
+          '" width="100%" height="100%" style="border:none; display: block; width: 100%; border: none; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%;"></iframe> </body>';
+
+        const blob = new Blob([saveText], {
+          type: "text/html;charset=utf-8",
+        });
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "game.html";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      async function saveWriteToFile(saveUrl) {
+        const response = await fetch(saveUrl);
+        const htmlContent = await response.text();
+
+        const blob = new Blob([htmlContent], {
+          type: "text/html;charset=utf-8",
+        });
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "game.html";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function ytOpen() {
+        const id = document.getElementById("ytInput").value;
+        const url = "https://www.youtube.com/embed/" + id + "/";
+
+        const newWindow = window.open("about:blank", "_blank");
+        newWindow.document.write(
+          '<head><link rel="icon" href=' +
+            localStorage.cheddarCImage +
+            "> <title>" +
+            localStorage.cheddarCName +
+            '</title></head><body style="background-color: black;   background-image: linear-gradient(black, #406350, black); margin: 0px; padding: 0px; height: 100%;"><iframe src="' +
+            url +
+            '" width="100%" height="100%" style="display: block; width: 100%; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%; border: none;"></iframe> </body>',
+        );
+      }
+
+      function turbowarp() {
+        const id = document.getElementById("turbowarpInput").value;
+        const url = "https://turbowarp.org/" + id + "/embed";
+
+        const newWindow = window.open("about:blank", "_blank");
+        newWindow.document.write(
+          '<head><link rel="icon" href=' +
+            localStorage.cheddarCImage +
+            "> <title>" +
+            localStorage.cheddarCName +
+            '</title></head><body style="background-color: black;   background-image: linear-gradient(black, #406350, black); margin: 0px; padding: 0px; height: 100%;"><iframe src="' +
+            url +
+            '" width="100%" height="100%" style="display: block; width: 100%; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%; border: none;"></iframe> </body>',
+        );
+      }
+      const themeingame = document.getElementById("overlay");
+
+      themeingame.addEventListener("change", (event) => {
+        if (event.currentTarget.checked) {
+          localStorage.cheddarOverlay = "true";
+        } else {
+          localStorage.cheddarOverlay = "false";
+        }
+      });
+      function openinAB(url, id) {
+        if (saveGame) {
+          saveToFile(url);
+          return;
+        }
+
+        recents.unshift(id);
+
+        localStorage.CheddarRecents = JSON.stringify(recents);
+
+        const newWindow = window.open("about:blank", "_blank");
+        newWindow.document.write(
+          '<head><link rel="icon" href=' +
+            localStorage.cheddarCImage +
+            "> <title>" +
+            localStorage.cheddarCName +
+            '</title></head><body style="margin: 0px; padding: 0px; height: 100%;"><iframe src="' +
+            url +
+            '" width="100%" height="100%" style="display: block; width: 100%; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%; border: none;"></iframe> </body>',
+        );
+        if (themeingame.checked) {
+          const style = document.head;
+          const clone = style.cloneNode(true);
+
+          newWindow.document.head.appendChild(clone);
+
+          newWindow.document.body.className = localStorage.cheddartheme;
+          const starstat = compstyle.getPropertyValue("--star").trim();
+          const scanstat = compstyle.getPropertyValue("--scanline").trim();
+          const vignstat = compstyle.getPropertyValue("--vignette").trim();
+
+          if (scanstat === "block") {
+            const scanline = document.getElementById("scanl");
+            const sc = scanline.cloneNode(true);
+            sc.style.position = "absolute";
+            newWindow.document.body.appendChild(sc);
+          }
+
+          if (vignstat === "block") {
+            const vign = document.getElementById("vign");
+            const vc = vign.cloneNode(true);
+            vc.style.position = "absolute";
+            newWindow.document.body.appendChild(vc);
+          }
+
+          if (starstat === "block") {
+            const st = document.getElementById("stars");
+            const stc = st.cloneNode(true);
+            stc.style.position = "absolute";
+            newWindow.document.body.appendChild(stc);
+          }
+        }
+      }
+
+      async function saveData() {
+        alert("This might take a while, dont touch anything other than this OK button");
+        const result = {};
+        result.cookies = document.cookie;
+        result.localStorage = { ...localStorage };
+        result.sessionStorage = { ...sessionStorage };
+        result.indexedDB = {};
+        const dbs = await indexedDB.databases();
+        for (const dbInfo of dbs) {
+          if (!dbInfo.name) continue;
+          result.indexedDB[dbInfo.name] = {};
+          await new Promise((resolve, reject) => {
+            const openRequest = indexedDB.open(dbInfo.name, dbInfo.version);
+            openRequest.onerror = () => reject(openRequest.error);
+            openRequest.onsuccess = () => {
+              const db = openRequest.result;
+              const storeNames = Array.from(db.objectStoreNames);
+              if (storeNames.length === 0) {
+                resolve();
+                return;
+              }
+              const transaction = db.transaction(storeNames, "readonly");
+              const storePromises = [];
+              for (const storeName of storeNames) {
+                result.indexedDB[dbInfo.name][storeName] = [];
+                const store = transaction.objectStore(storeName);
+                const getAllRequest = store.getAll();
+                const p = new Promise((res, rej) => {
+                  getAllRequest.onsuccess = () => {
+                    result.indexedDB[dbInfo.name][storeName] = sanitizeData(getAllRequest.result, 1000, 100);
+                    res();
+                  };
+                  getAllRequest.onerror = () => rej(getAllRequest.error);
+                });
+                storePromises.push(p);
+              }
+              Promise.all(storePromises).then(() => resolve());
+            };
+          });
+        }
+        result.caches = {};
+        const cacheNames = await caches.keys();
+        for (const cacheName of cacheNames) {
+          const cache = await caches.open(cacheName);
+          const requests = await cache.keys();
+          result.caches[cacheName] = [];
+          for (const req of requests) {
+            const response = await cache.match(req);
+            if (!response) continue;
+            const cloned = response.clone();
+            const contentType = cloned.headers.get("content-type") || "";
+            let body;
+            try {
+              if (contentType.includes("application/json")) {
+                body = await cloned.json();
+              } else if (contentType.includes("text") || contentType.includes("javascript")) {
+                body = await cloned.text();
+              } else {
+                const buffer = await cloned.arrayBuffer();
+                body = btoa(String.fromCharCode(...new Uint8Array(buffer)));
+              }
+            } catch (e) {
+              body = "[Unable to read body]";
+            }
+            result.caches[cacheName].push({
+              url: req.url,
+              body,
+              contentType,
+            });
+          }
+        }
+        alert("Done, wait for the download to come");
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(
+          new Blob([JSON.stringify(result)], {
+            type: "application/octet-stream",
+          }),
+        );
+        link.download = `${Date.now()}.data`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      async function loadGameData(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = async function (e) {
+          const data = JSON.parse(e.target.result);
+          if (data.cookies) {
+            data.cookies.split(";").forEach((cookie) => {
+              document.cookie = cookie.trim();
+            });
+          }
+          if (data.localStorage) {
+            for (const key in data.localStorage) {
+              localStorage.setItem(key, data.localStorage[key]);
+            }
+          }
+          if (data.sessionStorage) {
+            for (const key in data.sessionStorage) {
+              sessionStorage.setItem(key, data.sessionStorage[key]);
+            }
+          }
+          if (data.indexedDB) {
+            for (const dbName in data.indexedDB) {
+              const stores = data.indexedDB[dbName];
+              await new Promise((resolve, reject) => {
+                const request = indexedDB.open(dbName, 1);
+                request.onupgradeneeded = (e) => {
+                  const db = e.target.result;
+                  for (const storeName in stores) {
+                    if (!db.objectStoreNames.contains(storeName)) {
+                      db.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
+                    }
+                  }
+                };
+                request.onsuccess = (e) => {
+                  const db = e.target.result;
+                  const transaction = db.transaction(Object.keys(stores), "readwrite");
+                  transaction.onerror = () => reject(transaction.error);
+                  let pendingStores = Object.keys(stores).length;
+                  for (const storeName in stores) {
+                    const objectStore = transaction.objectStore(storeName);
+                    objectStore.clear().onsuccess = () => {
+                      for (const item of stores[storeName]) {
+                        objectStore.put(item);
+                      }
+                      pendingStores--;
+                      if (pendingStores === 0) resolve();
+                    };
+                  }
+                };
+                request.onerror = () => reject(request.error);
+              });
+            }
+          }
+          if (data.caches) {
+            for (const cacheName in data.caches) {
+              const cache = await caches.open(cacheName);
+              await cache.keys().then((keys) => Promise.all(keys.map((k) => cache.delete(k))));
+              for (const entry of data.caches[cacheName]) {
+                let responseBody;
+                if (entry.contentType.includes("application/json")) {
+                  responseBody = JSON.stringify(entry.body);
+                } else if (entry.contentType.includes("text") || entry.contentType.includes("javascript")) {
+                  responseBody = entry.body;
+                } else {
+                  const binaryStr = atob(entry.body);
+                  const len = binaryStr.length;
+                  const bytes = new Uint8Array(len);
+                  for (let i = 0; i < len; i++) {
+                    bytes[i] = binaryStr.charCodeAt(i);
+                  }
+                  responseBody = bytes.buffer;
+                }
+                const headers = new Headers({ "content-type": entry.contentType });
+                const response = new Response(responseBody, { headers });
+                await cache.put(entry.url, response);
+              }
+            }
+          }
+          alert("Data loaded");
+        };
+        alert("This might take a while, dont touch anything other than this OK button");
+        reader.readAsText(file);
+      }
+
+      async function writeHTML(url, e) {
+        if (saveGame) {
+          saveWriteToFile(url);
+          return;
+        }
+
+        const id = e;
+
+        recents.unshift(id);
+
+        localStorage.CheddarRecents = JSON.stringify(recents);
+
+        const nw = window.open("about:blank", "_blank");
+        nw.document.write(
+          '<head><link rel="icon" href="https://uploads.onecompiler.io/435gma6sn/43tdpw9dg/tabico.png"> <title>' +
+            localStorage.cheddarCName +
+            '</title></head><body style="margin: 0px; padding: 0px; height: 100%;"><iframe id="gw" width="100%" height="100%" style="display: block; width: 100%; overflow-y: auto; overflow-x: hidden; margin: 0px; padding: 0px; height: 100%; border: none;"></iframe> </body>',
+        );
+
+        const newWindow = nw.document.getElementById("gw");
+        //const newWindow = window.open('about:blank', '_blank')
+        const response = await fetch(url);
+        const htmlContent = await response.text();
+
+        const htmlContentL = htmlContent
+          .replaceAll("{HTML_URL}", "https://cdn.jsdelivr.net/gh/freebuisness/html@main")
+          .replaceAll("{COVER_URL}", "https://cdn.jsdelivr.net/gh/freebuisness/covers@main")
+          .replaceAll(/[\r\n]+/gm, "");
+
+        const newhtml = htmlContentL; //htmlContent.replace('"/', url);
+        const idoc = newWindow.contentWindow.document;
+        idoc.open();
+        idoc.write(htmlContent);
+        idoc.close();
+        if (themeingame.checked) {
+          const style = document.head;
+          const clone = style.cloneNode(true);
+
+          nw.document.head.appendChild(clone);
+
+          nw.document.body.className = localStorage.cheddartheme;
+
+          const starstat = compstyle.getPropertyValue("--star").trim();
+          const scanstat = compstyle.getPropertyValue("--scanline").trim();
+          const vignstat = compstyle.getPropertyValue("--vignette").trim();
+
+          if (scanstat === "block") {
+            const scanline = document.getElementById("scanl");
+            const sc = scanline.cloneNode(true);
+            sc.style.position = "absolute";
+            nw.document.body.appendChild(sc);
+          }
+
+          if (vignstat === "block") {
+            const vign = document.getElementById("vign");
+            const vc = vign.cloneNode(true);
+            vc.style.position = "absolute";
+            nw.document.body.appendChild(vc);
+          }
+
+          if (starstat === "block") {
+            const st = document.getElementById("stars");
+            const stc = st.cloneNode(true);
+            stc.style.position = "absolute";
+            nw.document.body.appendChild(stc);
+          }
+        }
+      }
+
+      //update theme preview
+      function ctp() {
+        body.style.fontFamily = document.getElementById("cusfont").value;
+
+        if (document.getElementById("scanCus").checked) {
+          body.style.setProperty("--scanline", "block");
+        } else {
+          body.style.setProperty("--scanline", "");
+        }
+
+        if (document.getElementById("staticCus").checked) {
+          body.style.setProperty("--static-g", "block");
+        } else {
+          body.style.setProperty("--static-g", "");
+        }
+
+        if (document.getElementById("starCus").checked) {
+          body.style.setProperty("--star", "block");
+        } else {
+          body.style.setProperty("--star", "");
+        }
+
+        if (document.getElementById("cusJitter").checked) {
+          body.style.animationName = "jitter";
+          body.style.animationDuration = "0.001s";
+          body.style.animationIterationCount = "infinite";
+        } else {
+          body.style.animationName = "";
+          body.style.animationDuration = "";
+          body.style.animationIterationCount = "";
+        }
+
+        if (document.getElementById("cusBlur").checked) {
+          body.style.filter = "blur(0.9px)";
+        } else {
+          body.style.filter = "";
+        }
+
+        if (document.getElementById("cusGradientBox").checked) {
+          document.getElementById("cusBGGradDisp").style.display = "block";
+          document.getElementById("cusBGColorDisp").style.display = "none";
+          const bgc1 = document.getElementById("cusBG1").value;
+          const bgc2 = document.getElementById("cusBG2").value;
+          const bgc3 = document.getElementById("cusBG3").value;
+          document.body.style.backgroundImage = "linear-gradient(" + bgc1 + ", " + bgc2 + ", " + bgc3 + ")";
+          if (bgc1 == "" && bgc2 == "" && bgc3 == "") {
+            body.style.backgroundImage = compstyle.backgroundImage.trim();
+          }
+        } else {
+          document.getElementById("cusBGGradDisp").style.display = "none";
+          document.getElementById("cusBGColorDisp").style.display = "block";
+          const bgc = document.getElementById("cusBGColor").value;
+          document.body.style.backgroundColor = bgc;
+          if (bgc == "") {
+            document.body.style.backgroundColor = "";
+            setTimeout(function () {
+              body.style.backgroundColor = compstyle.backgroundColor.trim();
+            }, 600);
+          } else {
+            document.body.style.backgroundImage = "none";
+          }
+        }
+
+        body.style.backgroundImage = compstyle.backgroundImage.trim();
+
+        const tc = document.getElementById("cusTextColor").value;
+        document.body.style.color = tc;
+        if (tc == "") {
+          document.body.style.color = compstyle.color.trim();
+        }
+
+        const hc = document.getElementById("cusHeadColor").value;
+        document.body.style.setProperty("--header-color", hc);
+        if (hc == "") {
+          document.body.style.setProperty("--header-color", compstyle.getPropertyValue("--header-color").trim());
+        }
+
+        const bc = document.getElementById("cusBorderColor").value;
+        document.body.style.setProperty("--border-color", bc);
+        if (bc == "") {
+          document.body.style.setProperty("--border-color", compstyle.getPropertyValue("--border-color").trim());
+        }
+
+        const btc = document.getElementById("cusBTC").value;
+        document.body.style.setProperty("--button-select-color", btc);
+        if (btc == "") {
+          document.body.style.setProperty(
+            "--button-select-color",
+            compstyle.getPropertyValue("--button-select-color").trim(),
+          );
+        }
+
+        const borderrad = document.getElementById("cusRad").value;
+        document.body.style.setProperty("--border-radius", borderrad);
+        if (borderrad == "") {
+          document.body.style.setProperty("--border-radius", compstyle.getPropertyValue("--border-radius").trim());
+        }
+
+        const bgimg = document.getElementById("cusBGIMG").value;
+        if (bgimg == "") {
+          document.body.style.backgroundImage = compstyle.backgroundImage.trim();
+          document.body.style.backgroundSize = compstyle.backgroundSize.trim();
+          document.body.style.backgroundPosition = compstyle.backgroundPosition.trim();
+          document.body.style.backdropFilter = compstyle.backdropFilter.trim();
+        } else {
+          document.body.style.backgroundImage = "url(" + bgimg + ")";
+        }
+
+        const bbc = document.getElementById("cusBBC").value;
+        if (bbc == "") {
+          document.body.style.setProperty("--button-bg-color", compstyle.getPropertyValue("--button-bg-color").trim());
+        } else {
+          document.body.style.setProperty("--button-bg-color", bbc);
+        }
+
+        if (bbc == "") {
+          document.body.style.setProperty("--button-gradient", compstyle.getPropertyValue("--button-gradient"));
+        } else {
+          document.body.style.setProperty("--button-gradient", "none");
+        }
+
+        const bsbc = document.getElementById("cusBSBC").value;
+        document.body.style.setProperty("--button-select-bg-color", bsbc);
+        if (bbc == "") {
+          document.body.style.setProperty(
+            "--button-select-gradient",
+            compstyle.getPropertyValue("--button-select-gradient"),
+          );
+          document.body.style.setProperty(
+            "--button-select-bg-color",
+            compstyle.getPropertyValue("--button-select-bg-color"),
+          );
+        } else {
+          document.body.style.setProperty("--button-select-gradient", "none");
+        }
+      }
+
+      function addtheme() {
+        ctp();
+        const tb = document.getElementById("themeBuild");
+        const tbi = tb.getElementsByTagName("input");
+        var tname = document.getElementById("themeName").value;
+        if (tname == "") {
+          tname = "Theme";
+        }
+
+        tname = tname.replaceAll(" ", "-SPACE-");
+
+        const styles = body.style;
+        let fs = "{\n";
+
+        for (let i = 0; i < styles.length; i++) {
+          const property = styles[i]; // Get property name (e.g., 'background-color')
+          const value = styles.getPropertyValue(property); // Get the computed value
+          fs += `  ${property}: ${value};\n`;
+        }
+
+        fs += "}";
+
+        localStorage.setItem(tname + "CTHEME", "." + tname + fs);
+        if (cusThemes.includes(tname)) {
+          const index = cusThemes.indexOf(tname);
+          if (index > -1) {
+            cusThemes.splice(index, 1); // Remove it from its current spot
+          }
+          cusThemes.unshift(tname);
+        } else {
+          cusThemes.push(tname);
+        }
+        localStorage.setItem("cthemes", JSON.stringify(cusThemes, true));
+        loadthemes();
+        document.body.className = "revert";
+        changeTheme(tname);
+        for (const e of tbi) {
+          if (e.type == "checkbox") {
+            e.checked = false;
+            continue;
+          }
+          e.value = "";
+        }
+      }
+
+      function loadtheme() {
+        ctp();
+        var reader = new FileReader();
+        var fs = "";
+        var tname = "";
+        const fileLoad = document.getElementById("fileInput");
+        fileLoad.click();
+
+        fileLoad.onchange = function () {
+          reader.readAsText(this.files[0], "UTF-8");
+          name = this.files[0].name;
+          reader.onload = function (evt) {
+            fs = evt.target.result;
+            tname = "red";
+
+            localStorage.setItem(tname + "CTHEME", "." + tname + fs);
+            if (cusThemes.includes(tname)) {
+              const index = cusThemes.indexOf(tname);
+              if (index > -1) {
+                cusThemes.splice(index, 1); // Remove it from its current spot
+              }
+              cusThemes.unshift(tname);
+            } else {
+              cusThemes.push(tname);
+            }
+            localStorage.setItem("cthemes", JSON.stringify(cusThemes, true));
+            loadthemes();
+            document.body.className = "revert";
+            changeTheme(tname);
+            const tb = document.getElementById("themeBuild");
+            const tbi = tb.getElementsByTagName("input");
+            for (const e of tbi) {
+              if (e.type == "checkbox") {
+                e.checked = false;
+                continue;
+              }
+              e.value = "";
+            }
+          };
+        };
+      }
+
+      function imbored() {
+        var min = 1;
+        var max = gamelist.length;
+
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        var rand = Math.floor(Math.random() * (max - min + 1)) + min;
+        const game = gamelist[rand];
+
+        if (game.method == "write") {
+          writeHTML(game.url);
+          return;
+        } else {
+          openinAB(game.url);
+        }
+      }
+
+      function addbutton() {
+        currentOptions.innerHTML =
+          "" +
+          currentOptions.innerHTML +
+          '<button id="' +
+          cusID.value +
+          '" onclick="openinAB(\' ' +
+          cusURL.value +
+          ' \')"><img src="' +
+          cusIMG.value +
+          '" width="64px" height="64px"><div>' +
+          cusName.value +
+          "</div></button>";
+        localStorage.cheddarbuttons = currentOptions.innerHTML;
+      }
+
+      function buttonDelete() {
+        var id = document.getElementById("buttonDelete").value;
+        document.getElementById("" + id + "").remove();
+        localStorage.cheddarbuttons = currentOptions.innerHTML;
+      }
+
+      function clearButtons() {
+        localStorage.cheddarbuttons = "";
+        currentOptions.innerHTML = "";
+      }
+
+      var oN = "Featured";
+      var oID = "feat";
+
+      function dropdown(name, id) {
+        var a = document.getElementById(id);
+        var n = document.getElementById(name + "Disp");
+
+        if (a.style.display == "block") {
+          n.innerHTML = name;
+          a.style.display = "none";
+          n.style.textDecoration = "";
+          oN = nil;
+          oID = nil;
+        } else {
+          if (oN) {
+            const z = document.getElementById(oN + "Disp");
+            var y = document.getElementById(oID);
+
+            z.innerHTML = oN;
+            z.style.textDecoration = "";
+            y.style.display = "none";
+          }
+
+          oN = name;
+          oID = id;
+
+          n.innerHTML = name;
+          n.style.textDecoration = "underline";
+          a.style.display = "block";
+        }
+      }
+
+      function olddropdown(name, id) {
+        var a = document.getElementById(id);
+        var n = document.getElementById(name + "Disp");
+
+        if (a.style.display == "block") {
+          n.innerHTML = name + " ^";
+          a.style.display = "none";
+          n.style.textDecoration = "";
+        } else {
+          n.innerHTML = name + " v";
+          n.style.textDecoration = "underline";
+          a.style.display = "block";
+        }
+      }
+
+      function settings() {
+        var a = document.getElementById("settings");
+
+        if (a.style.display == "block") {
+          a.style.display = "none";
+        } else {
+          a.style.display = "block";
+        }
+      }
+
+      function panic() {
+        window.open("https://classroom.google.com/h", "_self");
+      }
+
+      document.addEventListener("keydown", (event) => {
+        document.getElementById("screensaver").style.display = "none";
+        if (event.code === "KeyQ") {
+          altLink = true;
+        }
+
+        if (event.code === "KeyS") {
+          saveGame = true;
+        }
+
+        if (event.code === "Escape" && !Cshift) {
+          panic();
+        }
+
+        if (event.code === "ShiftLeft") {
+          Cshift = true;
+        }
+      });
+
+      document.addEventListener("keyup", (event) => {
+        if (event.code === "KeyQ") {
+          altLink = false;
+        }
+
+        if (event.code === "KeyS") {
+          saveGame = false;
+        }
+
+        if (event.code === "ShiftLeft") {
+          Cshift = false;
+        }
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          screensaver();
+        }
+      });
+
+      function search(inp, id, cat) {
+        const thing = document.getElementById(id);
+        const val = inp.value.toUpperCase();
+        thing.innerHTML = "";
+
+        for (i = 0; i < gamelist.length; i++) {
+          const game = gamelist[i];
+          const gameval = game.name.toUpperCase();
+          const gamecat = game.cat;
+
+          if (cat) {
+            if (game.cat !== cat) {
+              continue;
+            }
+          }
+
+          if (game.cat == "tools") {
+            continue;
+          }
+
+          if (!game.name.toUpperCase().includes(val)) {
+            continue;
+          }
+
+          if (game.broken) {
+            continue;
+          }
+
+          if (game.password) {
+            if (val == gameval) {
+              //idk
+            } else {
+              continue;
+            }
+          }
+
+          if (game.method == "write") {
+            const button = document.createElement("button");
+            const img = document.createElement("img");
+            img.src = game.img;
+            const div = document.createElement("div");
+            div.innerHTML = game.name;
+
+            thing.appendChild(button);
+            button.appendChild(img);
+            button.appendChild(div);
+            img.width = "64";
+            img.height = "64";
+            button.onclick = function () {
+              writeHTML(game.url);
+            };
+          } else {
+            const button = document.createElement("button");
+            const img = document.createElement("img");
+            img.src = game.img;
+            const div = document.createElement("div");
+            div.innerHTML = game.name;
+
+            thing.appendChild(button);
+            button.appendChild(img);
+            button.appendChild(div);
+            img.width = "64";
+            img.height = "64";
+            button.onclick = function () {
+              openinAB(game.url);
+            };
+          }
+        }
+      }
+
+      function deleteBGIMG() {
+        localStorage.cheddarBG = "";
+        body.style.backgroundImage = "";
+        body.className = localStorage.cheddartheme;
+      }
+
+      function downloadData() {
+        const text = document.getElementById("customButtons").innerHTML;
+
+        const blob = new Blob([text], {
+          type: "text/html;charset=utf-8",
+        });
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "button-data.chdr";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function loadFile() {
+        var reader = new FileReader();
+
+        const fileLoad = document.getElementById("fileInput");
+        fileLoad.click();
+
+        fileLoad.onchange = function () {
+          reader.readAsText(this.files[0], "UTF-8");
+          reader.onload = function (evt) {
+            currentOptions.innerHTML = "" + currentOptions.innerHTML + "" + evt.target.result;
+            localStorage = "" + currentOptions.innerHTML + "" + evt.target.result;
+          };
+        };
+      }
+
+      function saveBgFile() {
+        var reader = new FileReader();
+
+        const fileLoad = document.getElementById("wallpaperFileInput");
+        fileLoad.click();
+
+        fileLoad.onchange = function () {
+          const file = URL.createObjectURL(this.files[0]);
+
+          localStorage.cheddarBG = file;
+          if (!localStorage.cheddarBG == "") {
+            body.style.backgroundImage = "url(" + localStorage.cheddarBG + ")";
+          }
+        };
+      }
+
+      function closeChangelog() {
+        var a = document.getElementById("changelog");
+
+        a.style.display = "none";
+      }
+
+      function openthemes() {
+        var a = document.getElementById("themesdisp");
+
+        if (a.style.display == "block") {
+          a.style.display = "none";
+        } else {
+          a.style.display = "block";
+        }
+      }
+
+      function changelog() {
+        var a = document.getElementById("changelog");
+
+        if (a.style.display == "block") {
+          a.style.display = "none";
+        } else {
+          a.style.display = "block";
+        }
+      }
+    </script>
+    <script>
+      const output = document.getElementById("cmdOutput");
+
+      document.addEventListener("keydown", (event) => {
+        document.getElementById("keyPressed").innerHTML = event.code;
+
+        if (event.code === "Backquote") {
+          document.getElementById("debugConsole").style.display = "block";
+        }
+
+        //commands
+        function test() {
+          output.innerHTML =
+            "" + output.innerHTML + '<div>test: successful  </div> <div syle="color: black;">sad</div>';
+        }
+
+        function help() {
+          output.innerHTML =
+            "" +
+            output.innerHTML +
+            '<div>test(): tests the command line</div>  <div>help(): lists commands</div> <div>openinAB("LINK"): Opens page using the Iframe method in and about blank</div>  <div>writeHTML("LINK"): Opens page using the fetch method</div> <div>changeTheme("CLASS"): Sets theme to class and saves</div> <div>imbored(): Opens random page from the gamelist variable</div>  <div>saveCloak(): Saves the cloaking options</div> <div>addbutton(): Adds a custom button using the given values</div> <div>buttonDelete("BUTTON ID"): Deletes the button with the given id</div>  <div>clearButtons(): Clears all data from localStorage.cheddarbuttons</div> <div>saveBgImage("image Url"): Sets the background image of the website</div>  <div>getVar(var): Returns a variable with the given value</div>  <div style="color: black;">asd</div>';
+        }
+
+        function print(p) {
+          output.innerHTML = "" + output.innerHTML + "<div>" + p + '</div><div style="color: black;">sad</div>';
+        }
+
+        function getVar(vartoget) {
+          output.innerHTML =
+            "" +
+            output.innerHTML +
+            "<div>getVar(" +
+            vartoget +
+            "):  " +
+            eval(vartoget) +
+            '<div style="color: black;">sad</div>';
+        }
+
+        function getStorage(vartoget) {
+          output.innerHTML =
+            "" +
+            output.innerHTML +
+            "<div>getVar(" +
+            vartoget +
+            "):  " +
+            eval(vartoget) +
+            '<div style="color: black;">sad</div>';
+        }
+
+        async function getHTML(url) {
+          const response = await fetch(url);
+          const htmlContent = await response.text();
+          const newhtml = htmlContent.replace('"/', url);
+
+          return newhtml;
+        }
+
+        function convertToList() {
+          const games = document.getElementById("games");
+          const buttons = games.children;
+          const list = [];
+
+          for (let i = 0; i < buttons.length; i++) {
+            const button = buttons[i];
+            if (!button.tagName == "button") {
+              return;
+            }
+
+            const name = button.textContent;
+            const img = button.children[0].src;
+            var url = "url";
+            var method = "method";
+            var buttonFunc = button.onclick;
+
+            if (typeof buttonFunc === "function" && buttonFunc.toString().includes("openinAB")) {
+              method = "iframe";
+
+              const funcStr = buttonFunc.toString();
+
+              const matchResult = funcStr.match(/openinAB\s*\(['"](.*?)['"]\)/);
+
+              if (matchResult && matchResult.length > 1) {
+                const extractedValue = matchResult[1];
+                url = extractedValue;
+              } else {
+                print("Found the function name, but couldn't parse the URL using the regex.");
+              }
+            } else {
+              method = "write";
+
+              const funcStr = buttonFunc.toString();
+
+              const matchResult = funcStr.match(/writeHTML\s*\(['"](.*?)['"]\)/);
+
+              if (matchResult && matchResult.length > 1) {
+                const extractedValue = matchResult[1];
+                url = extractedValue;
+              } else {
+                print("Found the function name, but couldn't parse the URL using the regex.");
+              }
+            }
+
+            list.push('{name: "' + name + '", img: "' + img + '", url: "' + url + '", method: "' + method + '"}<br>');
+          }
+          print("const list = [<br>" + list + "]");
+        }
+        //commands end
+
+        if (event.code === "Enter") {
+          const command = document.getElementById("commandLine").value;
+
+          eval("[" + command + "]");
+        }
+
+        if (event.code === "ShiftLeft") {
+          Pshift = true;
+        }
+      });
+    </script>
+
+    <script id="overlayscript">
+      var shift = false;
+      const overlay = document.getElementById("gameoverlay");
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Escape") {
+          if (shift) {
+            if (overlay.className == "overlay") {
+              overlay.className = "invis";
+            } else {
+              overlay.className = "overlay";
+            }
+          }
+        }
+
+        if (event.code === "ShiftLeft") {
+          shift = true;
+        }
+      });
+
+      document.addEventListener("keyup", (event) => {
+        if (event.code === "ShiftLeft") {
+          shift = false;
+        }
+      });
+    </script>
+  </body>
+</html>
